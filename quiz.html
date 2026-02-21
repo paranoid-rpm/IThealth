@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест самооценки — IT Health</title>
+  <meta name="description" content="Интерактивный тест самооценки риска профессиональных заболеваний">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>
+">
+</head>
+<body>
+  <div class="reading-progress"></div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand"><span class="logo-icon">⚕</span><span>IT Health</span></a>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="nav.home">Главная</a>
+        <a href="diseases.html" data-i18n="nav.diseases">Заболевания</a>
+        <a href="risks.html" data-i18n="nav.risks">Факторы риска</a>
+        <a href="prevention.html" data-i18n="nav.prevention">Профилактика</a>
+        <a href="ergonomics.html" data-i18n="nav.ergonomics">Эргономика</a>
+        <a href="eyes.html" data-i18n="nav.eyes">Зрение</a>
+        <a href="mental.html" data-i18n="nav.mental">Ментальное здоровье</a>
+        <a href="exercises.html" data-i18n="nav.exercises">Упражнения</a>
+        <a href="quiz.html" data-i18n="nav.quiz">Тест</a>
+        <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
+        <div class="lang-toggle"><button data-lang="ru">RU</button><button data-lang="en">EN</button></div>
+      </div>
+      <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="tag reveal" data-i18n="nav.quiz">Тест</span>
+      <h1 class="reveal">Тест самооценки</h1>
+      <p class="reveal">Ответьте на вопросы — сайт оценит уровень риска и даст рекомендации. Результаты сохраняются в вашем браузере.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="section-sm">
+      <div class="quiz-container card reveal">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar" id="quizProgress"></div>
+        </div>
+        <div class="quiz-question" id="quizQuestion">Загрузка…</div>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div style="display:flex;gap:var(--sp-3);margin-top:var(--sp-8);justify-content:space-between;flex-wrap:wrap;">
+          <button class="btn btn-outline" id="quizBack">← Назад</button>
+          <button class="btn btn-primary" id="quizNext">Дальше →</button>
+        </div>
+      </div>
+
+      <div class="card reveal" style="margin-top:var(--sp-8);">
+        <div class="card-icon">🧾</div>
+        <h3>Как считается результат</h3>
+        <p style="color:var(--clr-text-muted);font-size:var(--fs-sm);">Каждый ответ добавляет баллы риска. Чем выше итог, тем больше стоит внимания уделить эргономике, перерывам, физической активности и профилактике стресса.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy" data-i18n="footer.copy">© 2026 IT Health. Индивидуальный проект.</div>
+        <div class="footer-links">
+          <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
+          <span class="footer-copy" data-i18n="footer.disclaimer">Информация на сайте не является медицинской консультацией.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/quiz.js"></script>
+</body>
+</html>
