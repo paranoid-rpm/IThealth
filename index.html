@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Health — Профилактика профессиональных заболеваний</title>
+  <meta name="description" content="Информационный сайт о профилактике профессиональных заболеваний специалистов по компьютерным системам">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+</head>
+<body>
+  <div class="reading-progress"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <span class="logo-icon">⚕</span>
+        <span>IT Health</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="nav.home">Главная</a>
+        <a href="diseases.html" data-i18n="nav.diseases">Заболевания</a>
+        <a href="risks.html" data-i18n="nav.risks">Факторы риска</a>
+        <a href="prevention.html" data-i18n="nav.prevention">Профилактика</a>
+        <a href="ergonomics.html" data-i18n="nav.ergonomics">Эргономика</a>
+        <a href="eyes.html" data-i18n="nav.eyes">Зрение</a>
+        <a href="mental.html" data-i18n="nav.mental">Ментальное здоровье</a>
+        <a href="exercises.html" data-i18n="nav.exercises">Упражнения</a>
+        <a href="quiz.html" data-i18n="nav.quiz">Тест</a>
+        <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
+        <div class="lang-toggle">
+          <button data-lang="ru">RU</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </div>
+      <button class="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="pulse"></span>
+        <span data-i18n="hero.badge">Здоровье IT-специалистов</span>
+      </div>
+      <h1 class="reveal" data-i18n="hero.title">Профилактика профессиональных заболеваний</h1>
+      <p class="hero-sub reveal" data-i18n="hero.sub">Всё о сохранении здоровья специалистов по компьютерным системам: от эргономики рабочего места до упражнений для глаз и борьбы со стрессом.</p>
+      <div class="hero-actions reveal">
+        <a href="diseases.html" class="btn btn-primary" data-i18n="hero.cta1">Начать изучение</a>
+        <a href="quiz.html" class="btn btn-outline" data-i18n="hero.cta2">Пройти тест</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat">
+          <div class="stat-num" data-count="12" data-suffix="+">0</div>
+          <div class="stat-label" data-i18n="stat.diseases">Заболеваний</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="5">0</div>
+          <div class="stat-label" data-i18n="stat.factors">Факторов риска</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="50" data-suffix="+">0</div>
+          <div class="stat-label" data-i18n="stat.tips">Советов</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="20" data-suffix="+">0</div>
+          <div class="stat-label" data-i18n="stat.exercises">Упражнений</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section class="section">
+    <div class="container">
+      <div class="content-block">
+        <div class="content-text reveal-left">
+          <span class="section-header">
+            <span class="tag" data-i18n="main.why.tag">Почему это важно</span>
+          </span>
+          <h2 data-i18n="main.why.title">Скрытые угрозы «офисных» профессий</h2>
+          <p data-i18n="main.why.text">Несмотря на кажущуюся безопасность, работа за компьютером сопряжена с комплексом скрытых угроз для здоровья. Вредные факторы действуют незаметно, но неотвратимо — хронические заболевания проявляются, когда переходят в серьёзную стадию.</p>
+        </div>
+        <div class="content-visual reveal-right float" data-parallax="-0.1">
+          🖥️
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY THREATS -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2 stagger">
+        <div class="card reveal">
+          <div class="card-icon">🖐️</div>
+          <h3 data-i18n="main.why.item1.title">Синдром запястного канала</h3>
+          <p data-i18n="main.why.item1.text">Тоннельный синдром развивается при однотипных движениях кисти. Может привести к хронической боли и потере трудоспособности.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">👁️</div>
+          <h3 data-i18n="main.why.item2.title">Компьютерный зрительный синдром</h3>
+          <p data-i18n="main.why.item2.text">До 90% пользователей ПК испытывают проблемы со зрением: сухость глаз, головные боли, размытость изображения.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🦴</div>
+          <h3 data-i18n="main.why.item3.title">Заболевания позвоночника</h3>
+          <p data-i18n="main.why.item3.text">Остеохондроз шейного и грудного отделов — следствие многочасового сидения в неправильной позе.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🧠</div>
+          <h3 data-i18n="main.why.item4.title">Эмоциональное выгорание</h3>
+          <p data-i18n="main.why.item4.text">Хронический стресс, дедлайны и монотония приводят к неврозам, психосоматическим расстройствам и снижению продуктивности.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE SECTIONS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="tag" data-i18n="main.topics.tag">Разделы сайта</span>
+        <h2 data-i18n="main.topics.title">Изучайте, тестируйте, внедряйте</h2>
+      </div>
+      <div class="grid-4 stagger">
+        <a href="diseases.html" class="card reveal">
+          <div class="card-icon">🩺</div>
+          <h3 data-i18n="card.diseases.title">Профессиональные заболевания</h3>
+          <p data-i18n="card.diseases.text">Подробный обзор заболеваний IT-специалистов: от туннельного синдрома до варикоза.</p>
+        </a>
+        <a href="risks.html" class="card reveal">
+          <div class="card-icon">⚠️</div>
+          <h3 data-i18n="card.risks.title">Факторы риска</h3>
+          <p data-i18n="card.risks.text">Физические, химические, биологические и психологические факторы профессионального вреда.</p>
+        </a>
+        <a href="prevention.html" class="card reveal">
+          <div class="card-icon">🛡️</div>
+          <h3 data-i18n="card.prevention.title">Методы профилактики</h3>
+          <p data-i18n="card.prevention.text">Научно обоснованные способы предотвращения заболеваний на рабочем месте.</p>
+        </a>
+        <a href="ergonomics.html" class="card reveal">
+          <div class="card-icon">💺</div>
+          <h3 data-i18n="card.ergonomics.title">Эргономика</h3>
+          <p data-i18n="card.ergonomics.text">Организация рабочего места: стол, стул, монитор, клавиатура, освещение.</p>
+        </a>
+        <a href="eyes.html" class="card reveal">
+          <div class="card-icon">👀</div>
+          <h3 data-i18n="card.eyes.title">Здоровье глаз</h3>
+          <p data-i18n="card.eyes.text">Правило 20-20-20, гимнастика для глаз, настройки монитора и защита зрения.</p>
+        </a>
+        <a href="mental.html" class="card reveal">
+          <div class="card-icon">🧘</div>
+          <h3 data-i18n="card.mental.title">Ментальное здоровье</h3>
+          <p data-i18n="card.mental.text">Борьба со стрессом, профилактика выгорания, баланс работы и отдыха.</p>
+        </a>
+        <a href="exercises.html" class="card reveal">
+          <div class="card-icon">🏃</div>
+          <h3 data-i18n="card.exercises.title">Упражнения и перерывы</h3>
+          <p data-i18n="card.exercises.text">Комплексы разминок, таймер перерывов и производственная гимнастика.</p>
+        </a>
+        <a href="quiz.html" class="card reveal">
+          <div class="card-icon">📋</div>
+          <h3 data-i18n="card.quiz.title">Тест самооценки</h3>
+          <p data-i18n="card.quiz.text">Проверьте свои привычки и узнайте уровень риска профессиональных заболеваний.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy" data-i18n="footer.copy">© 2026 IT Health. Индивидуальный проект.</div>
+        <div class="footer-links">
+          <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
+          <span class="footer-copy" data-i18n="footer.disclaimer">Информация на сайте не является медицинской консультацией.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
