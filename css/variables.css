@@ -69,3 +69,16 @@
   --max-w: 1200px;
   --nav-h: 72px;
 }
+
+/* Light theme */
+:root[data-theme="light"] {
+  --clr-bg: #f6f7fb;
+  --clr-bg-card: #ffffff;
+  --clr-bg-card-hover: #f3f6ff;
+  --clr-surface: #f0f3fa;
+  --clr-border: #d6deea;
+  --clr-text: #0b1120;
+  --clr-text-muted: #4b5563;
+  --clr-text-heading: #0b1120;
+  --clr-primary-glow: rgba(6,214,160,.10);
+}
