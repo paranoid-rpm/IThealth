@@ -1,127 +1,79 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ресурсы — IT Health</title>
-  <meta name="description" content="Полезные ресурсы и источники по профилактике профзаболеваний">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Ресурсы — IT Health Lab</title>
+  <meta name="description" content="Ссылки, документы и полезные материалы"/>
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
 </head>
 <body>
   <div class="reading-progress"></div>
-
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="logo-icon">⚕</span><span>IT Health</span></a>
-      <div class="nav-links">
-        <a href="index.html" data-i18n="nav.home">Главная</a>
-        <a href="diseases.html" data-i18n="nav.diseases">Заболевания</a>
-        <a href="risks.html" data-i18n="nav.risks">Факторы риска</a>
-        <a href="prevention.html" data-i18n="nav.prevention">Профилактика</a>
-        <a href="ergonomics.html" data-i18n="nav.ergonomics">Эргономика</a>
-        <a href="eyes.html" data-i18n="nav.eyes">Зрение</a>
-        <a href="mental.html" data-i18n="nav.mental">Ментальное здоровье</a>
-        <a href="exercises.html" data-i18n="nav.exercises">Упражнения</a>
-        <a href="quiz.html" data-i18n="nav.quiz">Тест</a>
-        <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
+      <a href="index.html" class="navbar-brand"><span class="logo-icon">🧪</span><span>IT Health Lab</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Главная</a>
+        <a href="diseases.html">Болезни</a>
+        <a href="prevention.html">Защита</a>
+        <a href="ergonomics.html">Эргономика</a>
+        <a href="exercises.html">Разминки</a>
+        <div class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false">Ещё ▾</button>
+          <div class="nav-dropdown">
+            <a href="risks.html">Факторы риска</a>
+            <a href="eyes.html">Зрение</a>
+            <a href="mental.html">Психика</a>
+            <a href="quiz.html">Тест</a>
+            <a href="resources.html">Ресурсы</a>
+          </div>
+        </div>
         <div class="lang-toggle"><button data-lang="ru">RU</button><button data-lang="en">EN</button></div>
       </div>
       <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </nav>
-
-  <section class="page-hero">
-    <div class="container">
-      <span class="tag reveal" data-i18n="nav.resources">Ресурсы</span>
-      <h1 class="reveal">Источники и полезные ссылки</h1>
-      <p class="reveal">Здесь собраны материалы, которые можно использовать для расширения теоретической части проекта и для практических рекомендаций.</p>
+  <section class="page-hero"><div class="container">
+    <span class="tag reveal">Библиотека</span>
+    <h1 class="reveal">Ресурсы и ссылки</h1>
+    <p class="reveal">Нормативные документы, научные исследования, полезные инструменты.</p>
+  </div></section>
+  <div class="container"><article class="article">
+    <h2 class="reveal">Нормативные документы</h2>
+    <div class="feature-list reveal">
+      <div class="feature-item"><div class="feature-icon">📜</div><div><h4>СанПиН 1.2.3685-21</h4><p>Гигиенические нормативы для рабочих мест с ПЭВМ: освещённость, шум, микроклимат, ЭМИ.</p></div></div>
+      <div class="feature-item"><div class="feature-icon">📜</div><div><h4>ТК РФ, ст. 209–231</h4><p>Охрана труда: обязанности работодателя, спецоценка условий, средства защиты, медосмотры.</p></div></div>
+      <div class="feature-item"><div class="feature-icon">📜</div><div><h4>ГОСТ 12.2.032-78</h4><p>Эргономика рабочего места при сидячей работе: параметры стола, кресла, обзор, досягаемость.</p></div></div>
     </div>
-  </section>
-
-  <div class="container">
-    <article class="article">
-
-      <h2 class="reveal">Ключевые темы</h2>
-      <ul class="reveal">
-        <li>Профессиональные заболевания и медицина труда</li>
-        <li>Эргономика рабочего места</li>
-        <li>Компьютерный зрительный синдром и синдром сухого глаза</li>
-        <li>Синдром запястного канала и заболевания опорно-двигательного аппарата</li>
-        <li>Стресс, выгорание и психогигиена</li>
-        <li>Химические факторы (припои, флюсы, растворители) при ремонте/пайке</li>
-      </ul>
-
-      <h2 class="reveal">Подборка ссылок</h2>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">🌍</div>
-          <div>
-            <h4>ВОЗ (WHO) — здоровье на рабочем месте</h4>
-            <p><a href="https://www.who.int/" target="_blank" rel="noopener">who.int</a> — общие рекомендации по охране труда, стрессу, физической активности.</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🧑‍⚕️</div>
-          <div>
-            <h4>NIOSH — ergonomics</h4>
-            <p><a href="https://www.cdc.gov/niosh/" target="_blank" rel="noopener">cdc.gov/niosh</a> — материалы по эргономике и профилактике MSD (мышечно-скелетных расстройств).</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">👁️</div>
-          <div>
-            <h4>AAO (American Academy of Ophthalmology)</h4>
-            <p><a href="https://www.aao.org/" target="_blank" rel="noopener">aao.org</a> — статьи про синдром сухого глаза, зрительную нагрузку и гигиену зрения.</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🧠</div>
-          <div>
-            <h4>Burnout (ICD-11) — описание</h4>
-            <p>Проф. выгорание описано в ICD-11 как феномен, связанный с работой. Можно использовать как теоретическую базу.</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📚</div>
-          <div>
-            <h4>Учебники и методички</h4>
-            <p>Материалы по гигиене труда и профпатологии (медицина труда). Используйте разделы: классификация факторов, порядок установления профзаболеваний, профилактика.</p>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Как оформить список источников</h2>
-      <ol class="reveal">
-        <li>Разделить источники на: нормативные документы, научные статьи, сайты организаций, учебники.</li>
-        <li>Указывать: автор, название, год, ссылка и дата обращения (для веб-ресурсов).</li>
-        <li>Использовать единый стиль оформления (например, ГОСТ) на всём сайте/в проекте.</li>
-      </ol>
-
-      <div class="callout callout-info reveal">
-        <span class="callout-icon">📝</span>
-        <div class="callout-text">Ты можешь дополнять страницу «Ресурсы» по мере чтения. В идеале — 10–20 источников (часть русскоязычные, часть англоязычные).</div>
-      </div>
-
-    </article>
-  </div>
-
+    <h2 class="reveal">Полезные инструменты</h2>
+    <div class="grid-3 reveal">
+      <div class="card"><div class="card-icon">🖥️</div><h3>f.lux</h3><p>Автоматическая регулировка цветовой температуры экрана. Бесплатно для Windows/Mac/Linux.</p></div>
+      <div class="card"><div class="card-icon">⏱️</div><h3>Stretchly</h3><p>Open-source таймер перерывов с напоминаниями. Настраиваемые интервалы и микро-паузы.</p></div>
+      <div class="card"><div class="card-icon">🧘</div><h3>Headspace / Calm</h3><p>Приложения для медитации и управления стрессом. Есть бесплатные базовые программы.</p></div>
+    </div>
+    <h2 class="reveal">Исследования и статистика</h2>
+    <div class="grid-2 reveal">
+      <div class="card"><div class="card-icon">📊</div><h3>ВОЗ</h3><p>Musculoskeletal conditions — ведущая причина инвалидности в мире. 1.71 млрд человек затронуты.</p></div>
+      <div class="card"><div class="card-icon">📊</div><h3>UC Irvine</h3><p>Переключение контекста: 23 минуты на возврат к прерванной задаче. Уведомления — главный враг потока.</p></div>
+    </div>
+  </article></div>
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-copy" data-i18n="footer.copy">© 2026 IT Health. Индивидуальный проект.</div>
+        <div class="footer-copy">© 2026 IT Health Lab. Не является медицинской консультацией.</div>
         <div class="footer-links">
-          <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
-          <span class="footer-copy" data-i18n="footer.disclaimer">Информация на сайте не является медицинской консультацией.</span>
+          <a href="resources.html">Ресурсы</a>
+          <a href="quiz.html">Тест</a>
+          <a href="index.html">Главная</a>
         </div>
       </div>
     </div>
   </footer>
-
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

@@ -1,187 +1,90 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ментальное здоровье — IT Health</title>
-  <meta name="description" content="Профилактика выгорания и стресса у IT-специалистов">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪺</text></svg>">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Психика и стресс — IT Health Lab</title>
+  <meta name="description" content="Борьба со стрессом, выгорание, цифровая гигиена, сон"/>
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
 </head>
 <body>
   <div class="reading-progress"></div>
-
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="logo-icon">⚕</span><span>IT Health</span></a>
-      <div class="nav-links">
-        <a href="index.html" data-i18n="nav.home">Главная</a>
-        <a href="diseases.html" data-i18n="nav.diseases">Заболевания</a>
-        <a href="risks.html" data-i18n="nav.risks">Факторы риска</a>
-        <a href="prevention.html" data-i18n="nav.prevention">Профилактика</a>
-        <a href="ergonomics.html" data-i18n="nav.ergonomics">Эргономика</a>
-        <a href="eyes.html" data-i18n="nav.eyes">Зрение</a>
-        <a href="mental.html" data-i18n="nav.mental">Ментальное здоровье</a>
-        <a href="exercises.html" data-i18n="nav.exercises">Упражнения</a>
-        <a href="quiz.html" data-i18n="nav.quiz">Тест</a>
-        <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
+      <a href="index.html" class="navbar-brand"><span class="logo-icon">🧪</span><span>IT Health Lab</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Главная</a>
+        <a href="diseases.html">Болезни</a>
+        <a href="prevention.html">Защита</a>
+        <a href="ergonomics.html">Эргономика</a>
+        <a href="exercises.html">Разминки</a>
+        <div class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false">Ещё ▾</button>
+          <div class="nav-dropdown">
+            <a href="risks.html">Факторы риска</a>
+            <a href="eyes.html">Зрение</a>
+            <a href="mental.html">Психика</a>
+            <a href="quiz.html">Тест</a>
+            <a href="resources.html">Ресурсы</a>
+          </div>
+        </div>
         <div class="lang-toggle"><button data-lang="ru">RU</button><button data-lang="en">EN</button></div>
       </div>
       <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </nav>
-
-  <section class="page-hero">
-    <div class="container">
-      <span class="tag reveal" data-i18n="nav.mental">Ментальное здоровье</span>
-      <h1 class="reveal" data-i18n="card.mental.title">Ментальное здоровье</h1>
-      <p class="reveal">Профессиональное выгорание, хронический стресс и тревожность — одни из главных угроз для IT-специалистов. Профилактика ментального здоровья так же важна, как и физического.</p>
+  <section class="page-hero"><div class="container">
+    <span class="tag reveal">Психика</span>
+    <h1 class="reveal">Ментальное здоровье</h1>
+    <p class="reveal">Стресс, выгорание, прокрастинация — и что реально работает против них.</p>
+  </div></section>
+  <div class="container"><article class="article">
+    <div class="callout callout-warning reveal">
+      <span class="callout-icon">⚠️</span>
+      <div class="callout-text">Если симптомы тревоги или депрессии сохраняются более 2 недель — обратитесь к специалисту. Это не слабость, а нормальная практика.</div>
     </div>
-  </section>
-
-  <div class="container">
-    <article class="article">
-
-      <h2 class="reveal">Синдром эмоционального выгорания</h2>
-      <p class="reveal">Состояние эмоционального, физического и умственного истощения, вызванное длительным профессиональным стрессом. По данным исследований, до 60% IT-специалистов сталкиваются с выгоранием хотя бы раз в карьере.</p>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">😰</div>
-          <div><h4>Эмоциональное истощение</h4><p>Постоянная усталость, раздражительность, апатия. Потеря интереса к работе, которая раньше нравилась. Ощущение опустошённости, отсутствие энергии даже после отдыха.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🤖</div>
-          <div><h4>Деперсонализация</h4><p>Цинизм, отстранённость от работы и коллег. Формальное выполнение обязанностей без вовлечённости. Негативное отношение к клиентам/пользователям. Чувство бессмысленности труда.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📉</div>
-          <div><h4>Снижение продуктивности</h4><p>Падение эффективности, трудности с концентрацией. Прокрастинация, невозможность завершить задачи. Ошибки, которых раньше не было. Ощущение профессиональной несостоятельности.</p></div>
-        </div>
-      </div>
-
-      <div class="callout callout-warning reveal">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-text">
-          <strong>Признаки выгорания на физическом уровне:</strong> головные боли, бессонница, проблемы с ЖКТ, снижение иммунитета (частые простуды), обострение хронических заболеваний. Выгорание — не просто «лень», это медицинская проблема, требующая внимания.
-        </div>
-      </div>
-
-      <h2 class="reveal">Причины выгорания в IT</h2>
-      <ul class="reveal">
-        <li><strong>Высокая когнитивная нагрузка</strong> — постоянное решение сложных задач, необходимость удерживать много контекста</li>
-        <li><strong>Дедлайны и crunch-режим</strong> — переработки, сверхурочные, работа в выходные</li>
-        <li><strong>Неопределённость требований</strong> — частые изменения ТЗ, отсутствие чёткого видения проекта</li>
-        <li><strong>Отсутствие автономии</strong> — микроменеджмент, невозможность влиять на решения</li>
-        <li><strong>Конфликты в команде</strong> — токсичная атмосфера, отсутствие поддержки коллег</li>
-        <li><strong>Монотония</strong> — однообразные задачи, отсутствие профессионального роста</li>
-        <li><strong>Перфекционизм</strong> — завышенные требования к себе, страх ошибок</li>
-        <li><strong>Изоляция</strong> — удалённая работа без социальных контактов, одиночество</li>
-      </ul>
-
-      <h2 class="reveal">Профилактика выгорания</h2>
-      <div class="grid-2 reveal">
-        <div class="card">
-          <div class="card-icon">⏸️</div>
-          <h3>Границы и баланс</h3>
-          <p>Чёткое разделение работы и личной жизни. Не отвечать на рабочие сообщения после 19:00 и в выходные. Полноценные выходные без ноутбука. Отпуск минимум 2 недели подряд 2 раза в год. Научиться говорить «нет» нереалистичным дедлайнам.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🎯</div>
-          <h3>Реалистичные цели</h3>
-          <p>Декомпозиция больших задач на маленькие шаги. Фокус на 1–3 приоритетах в день, а не на 10. Признание прогресса (даже небольшого). Отказ от перфекционизма — «достаточно хорошо» лучше, чем «идеально, но никогда».</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>Социальная поддержка</h3>
-          <p>Общение с коллегами не только по работе. Менторство, парное программирование. Участие в сообществах, конференциях. Друзья и семья вне IT (переключение контекста). Не стесняться просить помощи.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📚</div>
-          <h3>Профессиональное развитие</h3>
-          <p>Обучение новым технологиям, смена стека. Side-проекты для интереса, а не денег. Rotation между задачами (не только рутина). Смена роли/команды/компании при застое. Признание достижений (портфолио, публичные выступления).</p>
-        </div>
-      </div>
-
-      <h2 class="reveal">Управление стрессом</h2>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">🧘</div>
-          <div><h4>Техники релаксации</h4><p>Глубокое диафрагмальное дыхание (4 вдох — 7 задержка — 8 выдох). Прогрессивная мышечная релаксация Якобсона. Медитация mindfulness 10–20 минут в день. Приложения: Headspace, Calm.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🏃</div>
-          <div><h4>Физическая активность</h4><p>Аэробные нагрузки снижают кортизол (гормон стресса) на 30%. Минимум 30 минут умеренной активности 5 раз в неделю. Ходьба, бег, велосипед, плавание. Даже 10-минутная прогулка в обед снижает стресс.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">😴</div>
-          <div><h4>Гигиена сна</h4><p>7–9 часов сна ежедневно. Ложиться и вставать в одно время (даже в выходные). Не смотреть в экран за час до сна (синий свет подавляет мелатонин). Прохладная тёмная комната. Избегать кофеина после 15:00.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🎨</div>
-          <div><h4>Хобби и творчество</h4><p>Занятия вне IT (музыка, рисование, спорт, рукоделие). Переключение типа деятельности (физический труд после умственного). Состояние «потока» в хобби восстанавливает ресурсы. Важно — никакой конкуренции и KPI в хобби.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Техники работы с тревогой</h2>
-      <p class="reveal">Тревожность — частый спутник IT-профессий из-за неопределённости, ответственности и сложности задач.</p>
-      <ul class="reveal">
-        <li><strong>Техника «5-4-3-2-1»</strong> (заземление при панической атаке) — назовите 5 вещей, которые видите, 4 которые слышите, 3 которые ощущаете, 2 которые чувствуете запах, 1 которую можете попробовать на вкус</li>
-        <li><strong>«А что если»-анализ</strong> — доведите катастрофическую мысль до логического конца: «А что если я не сдам проект? Уволят. А дальше? Найду другую работу. А дальше? Буду работать. Мир не рухнет»</li>
-        <li><strong>Разделение контролируемого и неконтролируемого</strong> — фокус только на том, что в вашей власти, остальное — отпустить</li>
-        <li><strong>Ограничение потребления новостей</strong> — не более 15 минут в день, избегать doom-scrolling</li>
-        <li><strong>Когнитивно-поведенческая терапия (КПТ)</strong> — работа с иррациональными убеждениями (через психолога или книги типа «Чувствовать хорошо» Дэвида Бернса)</li>
-      </ul>
-
-      <h2 class="reveal">Работа с прокрастинацией</h2>
-      <div class="grid-2 reveal">
-        <div class="card">
-          <div class="card-icon">🍅</div>
-          <h3>Техника Помодоро</h3>
-          <p>25 минут концентрированной работы — 5 минут перерыв. После 4 циклов — длинный перерыв 15–30 минут. Снижает порог входа в задачу («всего 25 минут»). Даёт структуру и чувство контроля.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📝</div>
-          <h3>Правило 2 минут</h3>
-          <p>Если задача занимает менее 2 минут — сделать немедленно, а не откладывать. Если большая задача пугает — начать с 2-минутной подзадачи («открыть файл», «написать заголовок»). Инерция преодолена — дальше легче.</p>
-        </div>
-      </div>
-
-      <h2 class="reveal">Когда нужна профессиональная помощь</h2>
-      <div class="callout callout-danger reveal">
-        <span class="callout-icon">🆘</span>
-        <div class="callout-text">
-          <strong>Обратитесь к психологу/психотерапевту при:</strong> стойком снижении настроения более 2 недель, мыслях о суициде, панических атаках, невозможности выполнять базовые обязанности, злоупотреблении алкоголем/психоактивными веществами, социальной изоляции. <strong>В России:</strong> Центр кризисной психологии МЧС (051 с мобильного), телефон доверия 8-800-2000-122 (бесплатно, круглосуточно).
-        </div>
-      </div>
-
-      <h2 class="reveal">Цифровой детокс</h2>
-      <p class="reveal">Постоянная связь с гаджетами усиливает стресс и выгорание. Периодическое отключение восстанавливает ресурсы.</p>
-      <ul class="reveal">
-        <li><strong>Выходные без соцсетей</strong> — удалить приложения на 2 дня, оставить только мессенджеры для близких</li>
-        <li><strong>«Аналоговый» вечер</strong> — после 20:00 никаких экранов, читать бумажные книги, гулять, общаться вживую</li>
-        <li><strong>Отключение уведомлений</strong> — оставить только звонки и СМС, всё остальное проверять по расписанию (10:00, 14:00, 18:00)</li>
-        <li><strong>Отпуск без ноутбука</strong> — полное отключение от работы, автоответчик «вернусь [дата]», доверие команде</li>
-      </ul>
-
-    </article>
-  </div>
-
+    <h2 class="reveal">Выгорание</h2>
+    <div class="grid-3 reveal">
+      <div class="card"><div class="card-icon">🔋</div><h3>Истощение</h3><p>Эмоциональная «пустота», хроническая усталость, нежелание работать даже после отдыха.</p></div>
+      <div class="card"><div class="card-icon">🎭</div><h3>Деперсонализация</h3><p>Цинизм, отстранённость, ощущение «мне всё равно». Коллеги и задачи раздражают.</p></div>
+      <div class="card"><div class="card-icon">📉</div><h3>Редукция достижений</h3><p>«Я ничего не добился», «мой код бесполезен». Самооценка падает, мотивация исчезает.</p></div>
+    </div>
+    <h2 class="reveal">Техники снижения стресса</h2>
+    <div class="feature-list reveal">
+      <div class="feature-item"><div class="feature-icon">🌬️</div><div><h4>Дыхание 4-6</h4><p>4 секунды вдох → 6 секунд выдох. 2–3 минуты снижают ЧСС и уровень кортизола. Попробуйте виджет на главной.</p></div></div>
+      <div class="feature-item"><div class="feature-icon">📝</div><div><h4>Дневник</h4><p>3 строки вечером: что хорошего было, что напрягло, план на завтра. Структурирует мысли и снижает «ночную тревожность».</p></div></div>
+      <div class="feature-item"><div class="feature-icon">🚶</div><div><h4>Прогулка</h4><p>20 минут без телефона. Природа (даже парк) восстанавливает префронтальную кору за 15–20 минут.</p></div></div>
+      <div class="feature-item"><div class="feature-icon">🧘</div><div><h4>Медитация</h4><p>5–10 минут осознанного дыхания утром. Снижает реактивность миндалевидного тела (центр страха и тревоги).</p></div></div>
+    </div>
+    <h2 class="reveal">Цифровая гигиена</h2>
+    <div class="grid-2 reveal">
+      <div class="card"><div class="card-icon">🔕</div><h3>Уведомления</h3><p>Оставьте только критичные. Каждое переключение внимания стоит 23 минуты на возврат к задаче (исследование UC Irvine).</p></div>
+      <div class="card"><div class="card-icon">📵</div><h3>Экранное время</h3><p>Screen Time / Digital Wellbeing. Установите лимит на соцсети. После 21:00 — режим «Не беспокоить».</p></div>
+    </div>
+    <h2 class="reveal">Сон</h2>
+    <div class="grid-2 reveal">
+      <div class="card"><div class="card-icon">🌙</div><h3>Гигиена сна</h3><p>7–9 часов. Фиксированное время подъёма. Экран — за 60 мин до сна. Температура 18–20 °C. Темнота.</p></div>
+      <div class="card"><div class="card-icon">☕</div><h3>Стимуляторы</h3><p>Кофеин — не после 14:00 (период полувыведения ~6 ч). Алкоголь ухудшает REM-фазу. Энергетики — табу.</p></div>
+    </div>
+    <div class="fact reveal">📌 Факт: хроническое недосыпание (менее 6 ч) за 2 недели снижает когнитивные функции эквивалентно 48 часам без сна.</div>
+  </article></div>
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-copy" data-i18n="footer.copy">© 2026 IT Health. Индивидуальный проект.</div>
+        <div class="footer-copy">© 2026 IT Health Lab. Не является медицинской консультацией.</div>
         <div class="footer-links">
-          <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
-          <span class="footer-copy" data-i18n="footer.disclaimer">Информация на сайте не является медицинской консультацией.</span>
+          <a href="resources.html">Ресурсы</a>
+          <a href="quiz.html">Тест</a>
+          <a href="index.html">Главная</a>
         </div>
       </div>
     </div>
   </footer>
-
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

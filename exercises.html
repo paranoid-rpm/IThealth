@@ -1,168 +1,93 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Упражнения и перерывы — IT Health</title>
-  <meta name="description" content="Комплексы упражнений для IT-специалистов и таймер перерывов">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏃</text></svg>">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Упражнения и разминки — IT Health Lab</title>
+  <meta name="description" content="Комплексы для шеи, спины, кистей и таймер перерывов"/>
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
 </head>
 <body>
   <div class="reading-progress"></div>
-
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="logo-icon">⚕</span><span>IT Health</span></a>
-      <div class="nav-links">
-        <a href="index.html" data-i18n="nav.home">Главная</a>
-        <a href="diseases.html" data-i18n="nav.diseases">Заболевания</a>
-        <a href="risks.html" data-i18n="nav.risks">Факторы риска</a>
-        <a href="prevention.html" data-i18n="nav.prevention">Профилактика</a>
-        <a href="ergonomics.html" data-i18n="nav.ergonomics">Эргономика</a>
-        <a href="eyes.html" data-i18n="nav.eyes">Зрение</a>
-        <a href="mental.html" data-i18n="nav.mental">Ментальное здоровье</a>
-        <a href="exercises.html" data-i18n="nav.exercises">Упражнения</a>
-        <a href="quiz.html" data-i18n="nav.quiz">Тест</a>
-        <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
+      <a href="index.html" class="navbar-brand"><span class="logo-icon">🧪</span><span>IT Health Lab</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Главная</a>
+        <a href="diseases.html">Болезни</a>
+        <a href="prevention.html">Защита</a>
+        <a href="ergonomics.html">Эргономика</a>
+        <a href="exercises.html">Разминки</a>
+        <div class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false">Ещё ▾</button>
+          <div class="nav-dropdown">
+            <a href="risks.html">Факторы риска</a>
+            <a href="eyes.html">Зрение</a>
+            <a href="mental.html">Психика</a>
+            <a href="quiz.html">Тест</a>
+            <a href="resources.html">Ресурсы</a>
+          </div>
+        </div>
         <div class="lang-toggle"><button data-lang="ru">RU</button><button data-lang="en">EN</button></div>
       </div>
       <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </nav>
-
-  <section class="page-hero">
-    <div class="container">
-      <span class="tag reveal" data-i18n="nav.exercises">Упражнения</span>
-      <h1 class="reveal" data-i18n="card.exercises.title">Упражнения и перерывы</h1>
-      <p class="reveal">Регулярные перерывы и короткие комплексы упражнений — ключ к профилактике гиподинамии, туннельного синдрома и болей в спине.</p>
+  <section class="page-hero"><div class="container">
+    <span class="tag reveal">Движение</span>
+    <h1 class="reveal">Упражнения и разминки</h1>
+    <p class="reveal">Готовые 5-минутные комплексы + встроенный таймер перерывов. Делай прямо за столом.</p>
+  </div></section>
+  <div class="container"><article class="article">
+    <h2 class="reveal">Таймер перерывов</h2>
+    <div class="timer-widget reveal">
+      <div style="font-size:var(--fs-sm);color:var(--clr-text-muted);">Работа 45 мин → перерыв 5 мин</div>
+      <div class="timer-display" id="timerDisplay">45:00</div>
+      <div class="timer-controls">
+        <button class="btn btn-primary" id="timerStart">Старт</button>
+        <button class="btn btn-outline" id="timerReset">Сброс</button>
+      </div>
     </div>
-  </section>
-
-  <div class="container">
-    <article class="article">
-
-      <div class="timer-widget reveal">
-        <h3>⏲️ Таймер перерывов (45/5)</h3>
-        <p style="margin-bottom:var(--sp-4);color:var(--clr-text-muted);font-size:var(--fs-sm);">45 минут работы → 5 минут активного перерыва</p>
-        <div class="timer-display" id="breakTimer">45:00</div>
-        <div class="timer-controls">
-          <button class="btn btn-primary" id="breakStart">▶ Старт</button>
-          <button class="btn btn-outline" id="breakReset">↻ Сброс</button>
-        </div>
-      </div>
-
-      <h2 class="reveal">Почему важны перерывы</h2>
-      <p class="reveal">Статическая поза приводит к ухудшению кровообращения, застою в венах ног, перенапряжению мышц шеи и спины. Перерывы каждые 45–60 минут снижают риск остеохондроза и туннельного синдрома.</p>
-
-      <h2 class="reveal">Мини-комплекс на 3 минуты</h2>
-      <p class="reveal">Подходит для любого рабочего места и не требует инвентаря.</p>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">🧍</div>
-          <div><h4>1) Встать и потянуться</h4><p>Поднять руки вверх, вытянуться, сделать 3 глубоких вдоха. Снять статическое напряжение позвоночника.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔄</div>
-          <div><h4>2) Круги плечами</h4><p>10 кругов вперёд и 10 назад. Раскрыть грудной отдел, снять зажимы в трапециях.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🦵</div>
-          <div><h4>3) Подъёмы на носки</h4><p>20 подъёмов. Улучшает венозный отток, профилактика варикоза и отёков.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Шея и плечи (5 минут)</h2>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">↔️</div>
-          <div><h4>Наклоны головы</h4><p>Медленно наклонять голову к плечу (ухо к плечу), задержка 10 сек, 3 раза на каждую сторону.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">⬇️</div>
-          <div><h4>Подбородок к груди</h4><p>Мягко опустить подбородок к груди, растянуть заднюю поверхность шеи, 20 сек, 2 подхода.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔁</div>
-          <div><h4>Повороты</h4><p>Повернуть голову влево, задержка 5 сек, вправо, 5 сек. Повторить 8–10 раз.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Кисти и запястья (профилактика туннельного синдрома)</h2>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">🖐️</div>
-          <div><h4>Встряхивание кистей</h4><p>10–15 секунд «стряхнуть воду» с кистей. Снимает напряжение и улучшает кровоток.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔄</div>
-          <div><h4>Вращение запястий</h4><p>10 кругов по часовой стрелке и 10 против. Движения плавные, без боли.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🧘</div>
-          <div><h4>Растяжка сгибателей</h4><p>Вытянуть руку вперёд, ладонь вверх. Другой рукой мягко тянуть пальцы вниз 15–20 сек. Повторить 2 раза на каждую руку.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🧘‍♂️</div>
-          <div><h4>Растяжка разгибателей</h4><p>Ладонь вниз. Другой рукой тянуть кисть вниз и к себе 15–20 сек. 2 раза на каждую руку.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Спина (6–8 минут)</h2>
-      <div class="grid-2 reveal">
-        <div class="card">
-          <div class="card-icon">🦴</div>
-          <h3>Кошка-корова</h3>
-          <p>Встать на четвереньки (если можно) или делать стоя: округлить спину — вдох, прогнуть — выдох. 10–12 повторений. Улучшает подвижность позвоночника.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🧱</div>
-          <h3>Разгибание грудного отдела</h3>
-          <p>Сцепить руки за головой, отвести локти назад, слегка прогнуться в грудном отделе. 8–10 повторений. Против «офисного» сутулого положения.</p>
-        </div>
-      </div>
-
-      <h2 class="reveal">Ноги и кровообращение (3–5 минут)</h2>
-      <ul class="reveal">
-        <li><strong>Перекаты с пятки на носок</strong> — 30 раз</li>
-        <li><strong>Приседания</strong> (без веса) — 10–15 раз</li>
-        <li><strong>Поза «голеностоп на колено»</strong> — растяжка ягодичных мышц, по 20 сек на сторону</li>
-        <li><strong>Короткая ходьба</strong> — пройтись по комнате 1–2 минуты</li>
-      </ul>
-
-      <h2 class="reveal">Пример режима на день</h2>
-      <ol class="reveal">
-        <li>45 минут работа → 5 минут активная разминка.</li>
-        <li>Каждые 2 часа — 10 минут прогулка или растяжка.</li>
-        <li>1 раз в день — 30 минут физической активности (ходьба, тренировка, бассейн).</li>
-        <li>Перед сном — лёгкая растяжка 5 минут.</li>
-      </ol>
-
-      <div class="callout callout-warning reveal">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-text">Если упражнение вызывает боль, головокружение или онемение — остановитесь. При хронических заболеваниях позвоночника и суставов согласуйте комплекс с врачом/реабилитологом.</div>
-      </div>
-
-    </article>
-  </div>
-
+    <h2 class="reveal">Шея и плечи (3 мин)</h2>
+    <div class="grid-2 reveal">
+      <div class="card"><div class="card-icon">↕️</div><h3>Наклоны</h3><p>Голова вниз → задержка 3 с → вверх. Затем ухо к плечу — влево/вправо. 8 повторений каждого. Не вращайте голову назад!</p></div>
+      <div class="card"><div class="card-icon">🔄</div><h3>Плечевые круги</h3><p>Поднять плечи к ушам → назад → вниз → вперёд. 10 кругов вперёд, 10 назад. Расслабляет трапецию.</p></div>
+    </div>
+    <h2 class="reveal">Спина (3 мин)</h2>
+    <div class="grid-2 reveal">
+      <div class="card"><div class="card-icon">🐱</div><h3>Кошка-корова</h3><p>Сидя: прогиб → округление спины. 10 повторений. Мобилизует грудной отдел и снимает скованность.</p></div>
+      <div class="card"><div class="card-icon">🔀</div><h3>Скручивание</h3><p>Поворот корпуса, рука за спинку стула. Задержка 10 с каждая сторона. 3 подхода. Освобождает межпозвоночные суставы.</p></div>
+    </div>
+    <h2 class="reveal">Кисти и запястья (2 мин)</h2>
+    <div class="grid-3 reveal">
+      <div class="card"><div class="card-icon">✋</div><h3>Разгибатели</h3><p>Вытянуть руку, ладонь вверх. Другой рукой потянуть пальцы вниз. 15 с × 3 каждая рука.</p></div>
+      <div class="card"><div class="card-icon">🤜</div><h3>Сгибатели</h3><p>Вытянуть руку, ладонь вниз. Потянуть пальцы к себе. 15 с × 3. Самое важное при туннельном синдроме.</p></div>
+      <div class="card"><div class="card-icon">👊</div><h3>Сжатие-раскрытие</h3><p>Сжать кулак → раскрыть, растопырив пальцы. 15 повторений. Улучшает кровоток в кисти.</p></div>
+    </div>
+    <h2 class="reveal">Глаза (1 мин)</h2>
+    <div class="grid-2 reveal">
+      <div class="card"><div class="card-icon">👁️</div><h3>20-20-20</h3><p>Посмотреть вдаль 20 с. Моргнуть 20 раз. Пальминг 20 с. Готово — роговица увлажнена, мышцы расслаблены.</p></div>
+      <div class="card"><div class="card-icon">🎯</div><h3>Фокусировка</h3><p>Палец на расстоянии 30 см → фокус → перевести взгляд вдаль → обратно. 10 повторений.</p></div>
+    </div>
+  </article></div>
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-copy" data-i18n="footer.copy">© 2026 IT Health. Индивидуальный проект.</div>
+        <div class="footer-copy">© 2026 IT Health Lab. Не является медицинской консультацией.</div>
         <div class="footer-links">
-          <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
-          <span class="footer-copy" data-i18n="footer.disclaimer">Информация на сайте не является медицинской консультацией.</span>
+          <a href="resources.html">Ресурсы</a>
+          <a href="quiz.html">Тест</a>
+          <a href="index.html">Главная</a>
         </div>
       </div>
     </div>
   </footer>
-
+  <script src="js/breakTimer.js"></script>
   <script type="module" src="js/app.js"></script>
-  <script type="module" src="js/breakTimer.js"></script>
 </body>
 </html>

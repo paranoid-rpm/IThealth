@@ -1,61 +1,30 @@
-/* ========== BREAK TIMER (45/5) ========== */
+/* ========== BREAK TIMER (exercises page) ========== */
+(function(){
+  const display=document.getElementById('timerDisplay');
+  const startBtn=document.getElementById('timerStart');
+  const resetBtn=document.getElementById('timerReset');
+  if(!display||!startBtn)return;
 
-let interval = null;
-let phase = 'work';
-let secondsLeft = 45 * 60;
+  let total=45*60,remaining=total,interval=null,isBreak=false;
 
-const WORK = 45 * 60;
-const BREAK = 5 * 60;
+  function fmt(s){const m=Math.floor(s/60);const sec=s%60;return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0')}
+  function render(){display.textContent=fmt(remaining);display.style.color=isBreak?'var(--clr-accent)':'var(--clr-primary)'}
 
-function format(sec) {
-  const m = Math.floor(sec / 60);
-  const s = sec % 60;
-  return `${m}:${s.toString().padStart(2,'0')}`;
-}
-
-function render() {
-  const el = document.getElementById('breakTimer');
-  if (el) el.textContent = format(secondsLeft);
-}
-
-function tick() {
-  secondsLeft--;
-  render();
-  if (secondsLeft <= 0) {
-    clearInterval(interval);
-    interval = null;
-
-    if (phase === 'work') {
-      phase = 'break';
-      secondsLeft = BREAK;
-      render();
-      alert('⏸️ Перерыв 5 минут!\n\nВстаньте, пройдитесь, сделайте 2–3 упражнения.');
-    } else {
-      phase = 'work';
-      secondsLeft = WORK;
-      render();
-      alert('▶ Время работать 45 минут.\n\nСядьте удобно, проверьте осанку и положение кистей.');
-    }
+  function tick(){
+    remaining--;
+    if(remaining<=0){
+      clearInterval(interval);interval=null;
+      if(!isBreak){isBreak=true;remaining=5*60;startBtn.textContent='\u041f\u0435\u0440\u0435\u0440\u044b\u0432';render();interval=setInterval(tick,1000);}
+      else{isBreak=false;remaining=total;startBtn.textContent='\u0421\u0442\u0430\u0440\u0442';render();}
+    }else{render();}
   }
-}
 
-function start() {
-  if (interval) return;
-  interval = setInterval(tick, 1000);
-}
-
-function reset() {
-  if (interval) {
-    clearInterval(interval);
-    interval = null;
-  }
-  phase = 'work';
-  secondsLeft = WORK;
+  startBtn.addEventListener('click',()=>{
+    if(interval){clearInterval(interval);interval=null;startBtn.textContent='\u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u044c';}
+    else{interval=setInterval(tick,1000);startBtn.textContent='\u041f\u0430\u0443\u0437\u0430';}
+  });
+  if(resetBtn) resetBtn.addEventListener('click',()=>{
+    clearInterval(interval);interval=null;isBreak=false;remaining=total;startBtn.textContent='\u0421\u0442\u0430\u0440\u0442';render();
+  });
   render();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('breakStart')?.addEventListener('click', start);
-  document.getElementById('breakReset')?.addEventListener('click', reset);
-  render();
-});
+})();
