@@ -1,4 +1,4 @@
-/* ========== APP ENTRY POINT ========== */
+/* ========== APP ENTRY POINT (v2) ========== */
 import { initI18n } from './i18n.js';
 import { initNav } from './nav.js';
 import { initReveal, initParallax, initReadingProgress, initCountUp, initPageTransitions } from './animations.js';
@@ -19,7 +19,6 @@ function initPWA() {
 }
 
 function mountGlobalUI() {
-  // Search modal
   if (!document.querySelector('[data-search-root]')) {
     const modal = document.createElement('div');
     modal.className = 'search-modal';
@@ -51,7 +50,6 @@ function mountGlobalUI() {
     modal.querySelectorAll('[data-search-close]').forEach(el => el.addEventListener('click', close));
   }
 
-  // Theme toggle button in navbar
   const nav = document.querySelector('.navbar .container');
   if (nav && !document.querySelector('[data-theme-toggle]')) {
     const btn = document.createElement('button');
@@ -63,7 +61,6 @@ function mountGlobalUI() {
     nav.appendChild(btn);
   }
 
-  // TOC host
   const article = document.querySelector('.article');
   if (article && !document.querySelector('[data-toc]')) {
     const tocHost = document.createElement('div');
@@ -78,13 +75,15 @@ function mountGlobalUI() {
 document.addEventListener('DOMContentLoaded', () => {
   initPWA();
 
-  // Canvas background style per page
+  // Canvas style per page
   if (document.body.classList.contains('home')) {
     document.documentElement.dataset.canvasStyle = 'particles';
+  } else if (document.location.pathname.includes('eyes')) {
+    document.documentElement.dataset.canvasStyle = 'mesh';
   } else if (document.location.pathname.includes('mental')) {
     document.documentElement.dataset.canvasStyle = 'waves';
   } else {
-    document.documentElement.dataset.canvasStyle = 'mesh';
+    document.documentElement.dataset.canvasStyle = 'particles';
   }
 
   mountCanvas();

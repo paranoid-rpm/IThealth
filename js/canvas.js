@@ -1,4 +1,4 @@
-/* ========== CANVAS BACKGROUNDS ========== */
+/* ========== CANVAS BACKGROUNDS v2 ========== */
 
 function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -37,13 +37,13 @@ function mountCanvas() {
 }
 
 function particles(ctx, size) {
-  const N = 70;
+  const N = 90;
   const pts = new Array(N).fill(0).map(() => ({
     x: Math.random(),
     y: Math.random(),
-    vx: (Math.random() - 0.5) * 0.15,
-    vy: (Math.random() - 0.5) * 0.15,
-    r: 1 + Math.random() * 2
+    vx: (Math.random() - 0.5) * 0.12,
+    vy: (Math.random() - 0.5) * 0.12,
+    r: 1 + Math.random() * 2.2
   }));
 
   let last = performance.now();
@@ -54,16 +54,13 @@ function particles(ctx, size) {
     const { w, h } = size();
     ctx.clearRect(0, 0, w, h);
 
-    // background vignette
-    const g = ctx.createRadialGradient(w * 0.5, h * 0.2, 0, w * 0.5, h * 0.2, Math.max(w, h));
-    g.addColorStop(0, 'rgba(6,214,160,0.10)');
+    const g = ctx.createRadialGradient(w * 0.35, h * 0.25, 0, w * 0.35, h * 0.25, Math.max(w, h));
+    g.addColorStop(0, 'rgba(167,139,250,0.10)');
+    g.addColorStop(0.6, 'rgba(236,72,153,0.06)');
     g.addColorStop(1, 'rgba(0,0,0,0)');
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, w, h);
 
-    ctx.lineWidth = 1;
-
-    // update
     for (const p of pts) {
       p.x += p.vx * dt;
       p.y += p.vy * dt;
@@ -73,16 +70,16 @@ function particles(ctx, size) {
       if (p.y > 1.05) p.y = -0.05;
     }
 
-    // links
     for (let i = 0; i < pts.length; i++) {
       for (let j = i + 1; j < pts.length; j++) {
         const a = pts[i], b = pts[j];
         const dx = (a.x - b.x) * w;
         const dy = (a.y - b.y) * h;
         const dist = Math.hypot(dx, dy);
-        if (dist < 140) {
-          const alpha = (1 - dist / 140) * 0.25;
-          ctx.strokeStyle = `rgba(17,138,178,${alpha})`;
+        if (dist < 150) {
+          const alpha = (1 - dist / 150) * 0.22;
+          ctx.strokeStyle = `rgba(167,139,250,${alpha})`;
+          ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(a.x * w, a.y * h);
           ctx.lineTo(b.x * w, b.y * h);
@@ -91,9 +88,8 @@ function particles(ctx, size) {
       }
     }
 
-    // points
     for (const p of pts) {
-      ctx.fillStyle = 'rgba(226,232,240,0.65)';
+      ctx.fillStyle = 'rgba(250,250,250,0.60)';
       ctx.beginPath();
       ctx.arc(p.x * w, p.y * h, p.r, 0, Math.PI * 2);
       ctx.fill();
@@ -110,15 +106,15 @@ function waves(ctx, size) {
     const { w, h } = size();
     ctx.clearRect(0, 0, w, h);
 
-    const mid = h * 0.55;
-    for (let k = 0; k < 3; k++) {
+    const mid = h * 0.58;
+    for (let k = 0; k < 4; k++) {
       ctx.beginPath();
-      for (let x = 0; x <= w; x += 14) {
-        const y = mid + Math.sin((x / 180) + t + k) * (16 + k * 9) + Math.cos((x / 65) - t * 0.7) * 8;
+      for (let x = 0; x <= w; x += 12) {
+        const y = mid + Math.sin((x / 170) + t + k * 0.6) * (14 + k * 7) + Math.cos((x / 55) - t * 0.7) * 7;
         if (x === 0) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
-      ctx.strokeStyle = k === 0 ? 'rgba(6,214,160,0.18)' : k === 1 ? 'rgba(17,138,178,0.14)' : 'rgba(239,71,111,0.10)';
+      ctx.strokeStyle = k % 2 === 0 ? 'rgba(236,72,153,0.12)' : 'rgba(167,139,250,0.12)';
       ctx.lineWidth = 2;
       ctx.stroke();
     }
@@ -135,15 +131,15 @@ function mesh(ctx, size) {
     const { w, h } = size();
     ctx.clearRect(0, 0, w, h);
 
-    const step = 60;
+    const step = 56;
     for (let y = -step; y < h + step; y += step) {
       for (let x = -step; x < w + step; x += step) {
         const nx = x + Math.sin((y / 120) + t) * 10;
         const ny = y + Math.cos((x / 120) - t) * 10;
 
-        ctx.fillStyle = 'rgba(6,214,160,0.06)';
+        ctx.fillStyle = 'rgba(245,158,11,0.05)';
         ctx.beginPath();
-        ctx.arc(nx, ny, 2.2, 0, Math.PI * 2);
+        ctx.arc(nx, ny, 2.0, 0, Math.PI * 2);
         ctx.fill();
       }
     }

@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IT Health — Профилактика профессиональных заболеваний</title>
-  <meta name="description" content="Информационный сайт о профилактике профессиональных заболеваний специалистов по компьютерным системам">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Health Lab — здоровье и продуктивность</title>
+  <meta name="description" content="Гайд для IT: зрение, спина, кисти, стресс, режим работы, микропривычки и чек‑листы." />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
 </head>
 <body class="home">
   <div class="reading-progress"></div>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand">
-        <span class="logo-icon">⚕</span>
-        <span>IT Health</span>
-      </a>
+      <a href="index.html" class="navbar-brand"><span class="logo-icon">🧪</span><span>IT Health Lab</span></a>
       <div class="nav-links">
         <a href="index.html" data-i18n="nav.home">Главная</a>
         <a href="diseases.html" data-i18n="nav.diseases">Заболевания</a>
@@ -29,172 +27,155 @@
         <a href="prevention.html" data-i18n="nav.prevention">Профилактика</a>
         <a href="ergonomics.html" data-i18n="nav.ergonomics">Эргономика</a>
         <a href="eyes.html" data-i18n="nav.eyes">Зрение</a>
-        <a href="mental.html" data-i18n="nav.mental">Ментальное здоровье</a>
+        <a href="mental.html" data-i18n="nav.mental">Психика</a>
         <a href="exercises.html" data-i18n="nav.exercises">Упражнения</a>
         <a href="quiz.html" data-i18n="nav.quiz">Тест</a>
         <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
-        <div class="lang-toggle">
-          <button data-lang="ru">RU</button>
-          <button data-lang="en">EN</button>
-        </div>
+        <div class="lang-toggle"><button data-lang="ru">RU</button><button data-lang="en">EN</button></div>
       </div>
-      <button class="burger" aria-label="Меню">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge reveal">
-        <span class="pulse"></span>
-        <span data-i18n="hero.badge">Здоровье IT-специалистов</span>
-      </div>
-      <h1 class="reveal" data-i18n="hero.title">Профилактика профессиональных заболеваний</h1>
-      <p class="hero-sub reveal" data-i18n="hero.sub">Всё о сохранении здоровья специалистов по компьютерным системам: от эргономики рабочего места до упражнений для глаз и борьбы со стрессом.</p>
+      <div class="hero-badge reveal"><span class="pulse"></span><span>Здоровье, продуктивность, устойчивость</span></div>
+      <h1 class="reveal">IT Health Lab</h1>
+      <p class="hero-sub reveal">Не «медицина ради медицины», а практичный набор привычек, чек‑листов и таймеров: меньше боли и усталости — больше концентрации и энергии.</p>
       <div class="hero-actions reveal">
-        <a href="diseases.html" class="btn btn-primary" data-i18n="hero.cta1">Начать изучение</a>
-        <a href="quiz.html" class="btn btn-outline" data-i18n="hero.cta2">Пройти тест</a>
+        <a class="btn btn-primary" href="quiz.html">Пройти быстрый тест</a>
+        <a class="btn btn-outline" href="#kits">Открыть наборы</a>
+        <a class="btn btn-outline" href="#habits">Трекер привычек</a>
       </div>
+      <div class="fact reveal">📌 Факт: при работе за экраном частота моргания обычно снижается — это усиливает сухость глаз.</div>
     </div>
   </section>
 
-  <!-- STATS -->
   <section class="section-sm">
     <div class="container">
       <div class="stats reveal">
-        <div class="stat">
-          <div class="stat-num" data-count="12" data-suffix="+">0</div>
-          <div class="stat-label" data-i18n="stat.diseases">Заболеваний</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num" data-count="5">0</div>
-          <div class="stat-label" data-i18n="stat.factors">Факторов риска</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num" data-count="50" data-suffix="+">0</div>
-          <div class="stat-label" data-i18n="stat.tips">Советов</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num" data-count="20" data-suffix="+">0</div>
-          <div class="stat-label" data-i18n="stat.exercises">Упражнений</div>
-        </div>
+        <div class="stat"><div class="stat-num" data-count="10" data-suffix="+">0</div><div class="stat-label">практик в день</div></div>
+        <div class="stat"><div class="stat-num" data-count="6" data-suffix="+">0</div><div class="stat-label">чек‑листов</div></div>
+        <div class="stat"><div class="stat-num" data-count="3">0</div><div class="stat-label">таймера</div></div>
+        <div class="stat"><div class="stat-num" data-count="1">0</div><div class="stat-label">план на неделю</div></div>
       </div>
     </div>
   </section>
 
-  <!-- WHY IT MATTERS -->
-  <section class="section" id="features">
+  <section class="section" id="kits">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="tag">Наборы</span>
+        <h2>Выбирай то, что болит</h2>
+      </div>
+      <div class="grid-4 stagger">
+        <a class="card reveal" href="eyes.html"><div class="card-icon">👁️</div><h3>Зрение</h3><p>20‑20‑20, сухость глаз, настройки экрана, свет, упражнения.</p></a>
+        <a class="card reveal" href="ergonomics.html"><div class="card-icon">💺</div><h3>Рабочее место</h3><p>Стол/кресло/монитор, посадка, «сидя‑стоя», микронастройки.</p></a>
+        <a class="card reveal" href="exercises.html"><div class="card-icon">🧩</div><h3>Разминки</h3><p>Комплексы для шеи/спины/кистей и таймер перерывов 45/5.</p></a>
+        <a class="card reveal" href="mental.html"><div class="card-icon">🧠</div><h3>Психика</h3><p>Стресс, прокрастинация, восстановление, сон, цифровая гигиена.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="habits">
     <div class="container">
       <div class="content-block">
         <div class="content-text reveal-left">
-          <span class="section-header">
-            <span class="tag" data-i18n="main.why.tag">Почему это важно</span>
-          </span>
-          <h2 data-i18n="main.why.title">Скрытые угрозы «офисных» профессий</h2>
-          <p data-i18n="main.why.text">Несмотря на кажущуюся безопасность, работа за компьютером сопряжена с комплексом скрытых угроз для здоровья. Вредные факторы действуют незаметно, но неотвратимо — хронические заболевания проявляются, когда переходят в серьёзную стадию.</p>
+          <span class="tag">Фишка</span>
+          <h2>Трекер привычек в браузере</h2>
+          <p>Отметь «перерыв», «вода», «разминка», «пальминг» — и сайт покажет прогресс. Данные сохраняются локально и не уходят в интернет.</p>
+          <div class="hero-actions" style="justify-content:flex-start;margin-top:16px;">
+            <button class="btn btn-primary" id="openHabits">Открыть трекер</button>
+            <button class="btn btn-outline" id="openBreath">Быстрое дыхание</button>
+          </div>
         </div>
-        <div class="content-visual reveal-right float" data-parallax="-0.1">
-          🖥️
-        </div>
+        <div class="content-visual reveal-right">🧬</div>
       </div>
     </div>
   </section>
 
-  <!-- KEY THREATS -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2 stagger">
-        <div class="card reveal">
-          <div class="card-icon">🖐️</div>
-          <h3 data-i18n="main.why.item1.title">Синдром запястного канала</h3>
-          <p data-i18n="main.why.item1.text">Тоннельный синдром развивается при однотипных движениях кисти. Может привести к хронической боли и потере трудоспособности.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">👁️</div>
-          <h3 data-i18n="main.why.item2.title">Компьютерный зрительный синдром</h3>
-          <p data-i18n="main.why.item2.text">До 90% пользователей ПК испытывают проблемы со зрением: сухость глаз, головные боли, размытость изображения.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🦴</div>
-          <h3 data-i18n="main.why.item3.title">Заболевания позвоночника</h3>
-          <p data-i18n="main.why.item3.text">Остеохондроз шейного и грудного отделов — следствие многочасового сидения в неправильной позе.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🧠</div>
-          <h3 data-i18n="main.why.item4.title">Эмоциональное выгорание</h3>
-          <p data-i18n="main.why.item4.text">Хронический стресс, дедлайны и монотония приводят к неврозам, психосоматическим расстройствам и снижению продуктивности.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SITE SECTIONS -->
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
-        <span class="tag" data-i18n="main.topics.tag">Разделы сайта</span>
-        <h2 data-i18n="main.topics.title">Изучайте, тестируйте, внедряйте</h2>
+        <span class="tag">Каркас знаний</span>
+        <h2>Как устроена профилактика</h2>
       </div>
-      <div class="grid-4 stagger">
-        <a href="diseases.html" class="card reveal">
-          <div class="card-icon">🩺</div>
-          <h3 data-i18n="card.diseases.title">Профессиональные заболевания</h3>
-          <p data-i18n="card.diseases.text">Подробный обзор заболеваний IT-специалистов: от туннельного синдрома до варикоза.</p>
-        </a>
-        <a href="risks.html" class="card reveal">
-          <div class="card-icon">⚠️</div>
-          <h3 data-i18n="card.risks.title">Факторы риска</h3>
-          <p data-i18n="card.risks.text">Физические, химические, биологические и психологические факторы профессионального вреда.</p>
-        </a>
-        <a href="prevention.html" class="card reveal">
-          <div class="card-icon">🛡️</div>
-          <h3 data-i18n="card.prevention.title">Методы профилактики</h3>
-          <p data-i18n="card.prevention.text">Научно обоснованные способы предотвращения заболеваний на рабочем месте.</p>
-        </a>
-        <a href="ergonomics.html" class="card reveal">
-          <div class="card-icon">💺</div>
-          <h3 data-i18n="card.ergonomics.title">Эргономика</h3>
-          <p data-i18n="card.ergonomics.text">Организация рабочего места: стол, стул, монитор, клавиатура, освещение.</p>
-        </a>
-        <a href="eyes.html" class="card reveal">
-          <div class="card-icon">👀</div>
-          <h3 data-i18n="card.eyes.title">Здоровье глаз</h3>
-          <p data-i18n="card.eyes.text">Правило 20-20-20, гимнастика для глаз, настройки монитора и защита зрения.</p>
-        </a>
-        <a href="mental.html" class="card reveal">
-          <div class="card-icon">🧘</div>
-          <h3 data-i18n="card.mental.title">Ментальное здоровье</h3>
-          <p data-i18n="card.mental.text">Борьба со стрессом, профилактика выгорания, баланс работы и отдыха.</p>
-        </a>
-        <a href="exercises.html" class="card reveal">
-          <div class="card-icon">🏃</div>
-          <h3 data-i18n="card.exercises.title">Упражнения и перерывы</h3>
-          <p data-i18n="card.exercises.text">Комплексы разминок, таймер перерывов и производственная гимнастика.</p>
-        </a>
-        <a href="quiz.html" class="card reveal">
-          <div class="card-icon">📋</div>
-          <h3 data-i18n="card.quiz.title">Тест самооценки</h3>
-          <p data-i18n="card.quiz.text">Проверьте свои привычки и узнайте уровень риска профессиональных заболеваний.</p>
-        </a>
+      <div class="grid-2">
+        <div class="feature-list">
+          <div class="feature-item reveal"><div class="feature-icon">🧱</div><div><h4>Основа</h4><p>Эргономика + режим перерывов: это снимает 80% «офисных» симптомов быстрее всего.</p></div></div>
+          <div class="feature-item reveal"><div class="feature-icon">🧪</div><div><h4>Триггеры</h4><p>Экран, статичная поза, микродвижения кистей, стресс и недосып усиливают друг друга.</p></div></div>
+          <div class="feature-item reveal"><div class="feature-icon">📈</div><div><h4>Измеримость</h4><p>Таймеры, чек‑листы и тест помогают закрепить привычки и увидеть улучшения.</p></div></div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🗓️</div>
+          <h3>План на 7 дней</h3>
+          <p style="margin-bottom:12px;color:var(--clr-text-muted)">Сделай это один раз — и станет легче.</p>
+          <ol style="padding-left:18px;list-style:decimal;color:var(--clr-text);line-height:1.7;">
+            <li>День 1: настрой высоту монитора и кресла.</li>
+            <li>День 2: включи таймер 45/5 и 20‑20‑20.</li>
+            <li>День 3: добавь 5‑мин разминку шеи/плеч.</li>
+            <li>День 4: прокачай кисти (растяжка сгибателей/разгибателей).</li>
+            <li>День 5: сон: фиксируем время подъёма.</li>
+            <li>День 6: прогулка 30 минут.</li>
+            <li>День 7: пересдаём тест и сравниваем.</li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-copy" data-i18n="footer.copy">© 2026 IT Health. Индивидуальный проект.</div>
+        <div class="footer-copy">© 2026 IT Health Lab.</div>
         <div class="footer-links">
-          <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
-          <span class="footer-copy" data-i18n="footer.disclaimer">Информация на сайте не является медицинской консультацией.</span>
+          <a href="resources.html">Ресурсы</a>
+          <span class="footer-copy">Информация на сайте не является медицинской консультацией.</span>
         </div>
       </div>
     </div>
   </footer>
 
+  <div id="habitModal" class="search-modal" aria-hidden="true">
+    <div class="search-modal-backdrop" data-habit-close></div>
+    <div class="search-modal-card" style="max-width:780px;">
+      <div class="search-top">
+        <div class="search-pill">Habit</div>
+        <div style="font-weight:800;">Трекер привычек</div>
+        <div style="flex:1"></div>
+        <button class="btn btn-outline" data-habit-close>Закрыть</button>
+      </div>
+      <div style="padding:16px;display:grid;gap:10px;">
+        <div class="fact">Совет: отмечай минимум 3 пункта в день — так привычки закрепляются быстрее.</div>
+        <div id="habitsRoot"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="breathModal" class="search-modal" aria-hidden="true">
+    <div class="search-modal-backdrop" data-breath-close></div>
+    <div class="search-modal-card" style="max-width:760px;">
+      <div class="search-top">
+        <div class="search-pill">Breathe</div>
+        <div style="font-weight:800;">Дыхание 4‑6</div>
+        <div style="flex:1"></div>
+        <button class="btn btn-outline" data-breath-close>Закрыть</button>
+      </div>
+      <div style="padding:16px;display:grid;gap:12px;">
+        <p style="color:var(--clr-text-muted)">4 секунды вдох → 6 секунд выдох. 2–3 минуты — и напряжение заметно падает.</p>
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+          <canvas id="breathCanvas" width="520" height="220" style="max-width:100%;border-radius:16px;border:1px solid var(--clr-border);background:var(--clr-surface);"></canvas>
+        </div>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn btn-primary" id="breathStart">Старт</button>
+          <button class="btn btn-outline" id="breathStop">Стоп</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/habits.js"></script>
+  <script type="module" src="js/breath.js"></script>
 </body>
 </html>
