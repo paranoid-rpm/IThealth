@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Профессиональные заболевания — IT Health</title>
-  <meta name="description" content="Полный обзор профессиональных заболеваний специалистов по компьютерным системам">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Профессиональные заболевания — IT Health Lab</title>
+  <meta name="description" content="Полный обзор болезней IT-специалистов: туннельный синдром, КЗС, остеохондроз, выгорание"/>
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
 </head>
 <body>
   <div class="reading-progress"></div>
-
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="logo-icon">⚕</span><span>IT Health</span></a>
-      <div class="nav-links">
-        <a href="index.html" data-i18n="nav.home">Главная</a>
-        <a href="diseases.html" data-i18n="nav.diseases">Заболевания</a>
-        <a href="risks.html" data-i18n="nav.risks">Факторы риска</a>
-        <a href="prevention.html" data-i18n="nav.prevention">Профилактика</a>
-        <a href="ergonomics.html" data-i18n="nav.ergonomics">Эргономика</a>
-        <a href="eyes.html" data-i18n="nav.eyes">Зрение</a>
-        <a href="mental.html" data-i18n="nav.mental">Ментальное здоровье</a>
-        <a href="exercises.html" data-i18n="nav.exercises">Упражнения</a>
-        <a href="quiz.html" data-i18n="nav.quiz">Тест</a>
-        <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
+      <a href="index.html" class="navbar-brand"><span class="logo-icon">🧪</span><span>IT Health Lab</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Главная</a>
+        <a href="diseases.html">Болезни</a>
+        <a href="prevention.html">Защита</a>
+        <a href="ergonomics.html">Эргономика</a>
+        <a href="exercises.html">Разминки</a>
+        <div class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false">Ещё ▾</button>
+          <div class="nav-dropdown">
+            <a href="risks.html">Факторы риска</a>
+            <a href="eyes.html">Зрение</a>
+            <a href="mental.html">Психика</a>
+            <a href="quiz.html">Тест</a>
+            <a href="resources.html">Ресурсы</a>
+          </div>
+        </div>
         <div class="lang-toggle"><button data-lang="ru">RU</button><button data-lang="en">EN</button></div>
       </div>
       <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
@@ -37,109 +41,65 @@
 
   <section class="page-hero">
     <div class="container">
-      <span class="tag reveal" data-i18n="nav.diseases">Заболевания</span>
-      <h1 class="reveal" data-i18n="card.diseases.title">Профессиональные заболевания</h1>
-      <p class="reveal">Подробный обзор заболеваний, которым подвержены специалисты по компьютерным системам — инженеры, техники, программисты и монтажники электронного оборудования.</p>
+      <span class="tag reveal">Справочник</span>
+      <h1 class="reveal">Профессиональные заболевания</h1>
+      <p class="reveal">12+ заболеваний, которым подвержены инженеры, программисты и техники. Каждое — с механизмом, симптомами и цифрами.</p>
     </div>
   </section>
 
   <div class="container">
     <article class="article">
 
-      <h2 class="reveal">Что такое профессиональное заболевание</h2>
-      <p class="reveal">Профессиональное заболевание — хроническое или острое заболевание, являющееся результатом воздействия вредных производственных факторов и повлекшее временную или стойкую утрату профессиональной трудоспособности. Различают заболевания по типу неблагоприятного фактора: химический, физический, биологический и психофизиологический.</p>
-
       <div class="callout callout-info reveal">
-        <span class="callout-icon">ℹ️</span>
-        <div class="callout-text">По данным ВОЗ, заболевания опорно-двигательного аппарата, связанные с работой, являются ведущей причиной инвалидности в мире. IT-специалисты входят в группу повышенного риска.</div>
+        <span class="callout-icon">📊</span>
+        <div class="callout-text">По данным ВОЗ, заболевания опорно-двигательного аппарата — ведущая причина инвалидности в мире. IT-специалисты входят в группу повышенного риска из-за статичной позы и мелких повторяющихся движений.</div>
       </div>
 
-      <h2 class="reveal">Синдром запястного канала (туннельный синдром)</h2>
-      <p class="reveal">Одно из самых распространённых заболеваний среди тех, кто много работает за компьютером. Развивается при длительных однотипных движениях кисти — набор текста, использование мыши, работа с мелкими компонентами при пайке.</p>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">📋</div>
-          <div><h4>Симптомы</h4><p>Онемение, покалывание и боль в пальцах (особенно большом, указательном и среднем). Ослабление хватки, затруднения при мелких движениях.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">⚙️</div>
-          <div><h4>Механизм</h4><p>Срединный нерв сдавливается в запястном канале из-за отёка сухожилий, вызванного постоянной нагрузкой. Со временем повреждение нерва становится необратимым.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">⏱️</div>
-          <div><h4>Группа риска</h4><p>Программисты, сборщики электроники, монтажники — все, кто совершает мелкие стереотипные движения кистью более 4 часов в день.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Компьютерный зрительный синдром (КЗС)</h2>
-      <p class="reveal">До 90% пользователей компьютеров испытывают симптомы КЗС. Это комплекс зрительных и глазных проблем, связанных с длительной работой за монитором или с мелкими деталями электроники.</p>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">👁️</div>
-          <div><h4>Проявления</h4><p>Сухость, жжение и покраснение глаз. Головные боли, размытость зрения, двоение. Повышенная чувствительность к свету.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔬</div>
-          <div><h4>Причина</h4><p>При концентрации на экране частота моргания снижается с 15–20 до 4–5 раз в минуту. Слёзная плёнка испаряется, роговица пересыхает.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Заболевания опорно-двигательного аппарата</h2>
-      <p class="reveal">Остеохондроз шейного и грудного отделов позвоночника — прямое следствие многочасового сидения в неправильной позе. Также распространены миозиты (воспаления мышц) и тендовагиниты (воспаления сухожильных влагалищ).</p>
-
+      <h2 class="reveal">Туннельный синдром (запястье)</h2>
       <div class="grid-2 reveal">
-        <div class="card">
-          <div class="card-icon">🦴</div>
-          <h3>Остеохондроз</h3>
-          <p>Дегенеративные изменения межпозвоночных дисков. Проявляется болью в шее, спине, головокружением, онемением рук. Прогрессирует при статичной позе и отсутствии физической активности.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💪</div>
-          <h3>Миозит</h3>
-          <p>Воспаление скелетных мышц шеи и плечевого пояса. Возникает от длительного напряжения при работе за монитором или паяльной станцией. Проявляется болью, скованностью и слабостью.</p>
-        </div>
+        <div class="card"><div class="card-icon">🖐️</div><h3>Что происходит</h3><p>Срединный нерв сдавливается в запястном канале из-за отёка сухожилий. При стаже 5+ лет за клавиатурой риск возрастает втрое. Без лечения повреждение становится необратимым.</p></div>
+        <div class="card"><div class="card-icon">📋</div><h3>Симптомы</h3><p>Онемение и покалывание в большом, указательном и среднем пальцах. Слабость хвата, боль ночью, трудности с мелкими движениями. Часто начинается с одной руки.</p></div>
+      </div>
+      <div class="fact reveal">📌 Факт: операция по декомпрессии запястного канала — одна из самых частых в хирургии кисти.</div>
+
+      <h2 class="reveal">Компьютерный зрительный синдром</h2>
+      <div class="grid-3 reveal">
+        <div class="card"><div class="card-icon">👁️</div><h3>Сухость</h3><p>Частота моргания падает с 15–20 до 4–5 раз/мин. Слёзная плёнка испаряется — роговица пересыхает.</p></div>
+        <div class="card"><div class="card-icon">🤕</div><h3>Головные боли</h3><p>Напряжение аккомодации → спазм цилиарной мышцы → тупая боль в лобной/височной области.</p></div>
+        <div class="card"><div class="card-icon">🔆</div><h3>Светочувствительность</h3><p>Длительная работа при плохом свете → повышенная чувствительность к яркому освещению и бликам.</p></div>
+      </div>
+      <div class="fact reveal">📌 До 90 % пользователей ПК испытывают хотя бы один симптом КЗС.</div>
+
+      <h2 class="reveal">Остеохондроз и миозит</h2>
+      <div class="grid-2 reveal">
+        <div class="card"><div class="card-icon">🦴</div><h3>Остеохондроз</h3><p>Дегенерация межпозвоночных дисков шейного и грудного отделов. Боль в шее, головокружение, онемение рук. Прогрессирует при статичной позе без перерывов.</p></div>
+        <div class="card"><div class="card-icon">💪</div><h3>Миозит</h3><p>Воспаление мышц шеи и плечевого пояса от длительного напряжения. Проявляется скованностью утром, болью при повороте головы, слабостью.</p></div>
       </div>
 
-      <h2 class="reveal">Гиподинамия и сердечно-сосудистые заболевания</h2>
-      <p class="reveal">Малоподвижный образ жизни IT-специалистов приводит к комплексу нарушений: ожирение, повышенный холестерин, гипертоническая болезнь, варикозное расширение вен. Сидячая работа более 6 часов в день увеличивает риск сердечно-сосудистых заболеваний на 18%.</p>
+      <h2 class="reveal">Сердечно-сосудистые риски</h2>
+      <div class="feature-list reveal">
+        <div class="feature-item"><div class="feature-icon">❤️</div><div><h4>Гиподинамия</h4><p>Сидячая работа 6+ часов/день увеличивает риск сердечно-сосудистых заболеваний на 18 %. Повышается холестерин, растёт давление, замедляется метаболизм.</p></div></div>
+        <div class="feature-item"><div class="feature-icon">🦵</div><div><h4>Варикоз</h4><p>Застой крови в ногах → расширение вен, тяжесть, отёки. Без профилактики прогрессирует до тромбофлебита.</p></div></div>
+        <div class="feature-item"><div class="feature-icon">⚖️</div><div><h4>Метаболический синдром</h4><p>Ожирение + инсулинорезистентность + гипертония. Частый «бонус» к сидячему образу жизни и перекусам у монитора.</p></div></div>
+      </div>
 
-      <h2 class="reveal">Синдром эмоционального выгорания</h2>
-      <p class="reveal">Хронический рабочий стресс, высокая ответственность, постоянные дедлайны и монотония приводят к профессиональному выгоранию. Проявляется эмоциональным истощением, деперсонализацией и снижением личных достижений.</p>
-
+      <h2 class="reveal">Эмоциональное выгорание</h2>
       <div class="callout callout-warning reveal">
         <span class="callout-icon">⚠️</span>
-        <div class="callout-text">По данным исследований, до 60% IT-специалистов испытывают симптомы выгорания хотя бы раз в карьере. Это влияет не только на производительность, но и на физическое здоровье — провоцирует гипертонию, язвенную болезнь и неврозы.</div>
+        <div class="callout-text">До 60 % IT-специалистов испытывают симптомы выгорания хотя бы раз в карьере — эмоциональное истощение, цинизм, ощущение бесполезности. Это провоцирует гипертонию, язвенную болезнь и неврозы.</div>
       </div>
 
-      <h2 class="reveal">Химические интоксикации</h2>
-      <p class="reveal">Специалисты по обслуживанию и ремонту компьютерных систем контактируют с припоями (свинец, олово), флюсами, канифолью, органическими растворителями и клеями. Длительное воздействие может вызвать:</p>
-      <ul class="reveal">
-        <li><strong>Хронические интоксикации свинцом</strong> — влияют на нервную систему, кроветворение, почки</li>
-        <li><strong>«Астму паяльщика»</strong> — бронхиальная астма от паров канифоли</li>
-        <li><strong>Аллергические дерматиты</strong> — от контакта с химическими реагентами</li>
-        <li><strong>Поражения печени и почек</strong> — при работе с органическими растворителями</li>
-      </ul>
-
-      <h2 class="reveal">Аллергические заболевания</h2>
-      <p class="reveal">Компьютерная пыль, химические испарения от компонентов, статическое электричество — всё это провоцирует аллергические реакции. У IT-специалистов чаще встречаются аллергический ринит, контактный дерматит и бронхиальная астма.</p>
-
-      <h2 class="reveal">Варикозная болезнь</h2>
-      <p class="reveal">Длительное сидение затрудняет венозный отток из нижних конечностей. Застой крови приводит к расширению вен, тяжести в ногах, отёкам. Без профилактики болезнь прогрессирует и может привести к тромбофлебиту.</p>
+      <h2 class="reveal">Химические и аллергические риски</h2>
+      <div class="grid-2 reveal">
+        <div class="card"><div class="card-icon">🧪</div><h3>Интоксикации</h3><p>Припои (свинец/олово), флюсы, канифоль, растворители. Хронический контакт поражает нервную систему, печень, почки и кроветворение.</p></div>
+        <div class="card"><div class="card-icon">🤧</div><h3>Аллергия</h3><p>Компьютерная пыль, статическое электричество, химические испарения вызывают ринит, дерматит и «астму паяльщика».</p></div>
+      </div>
 
       <h2 class="reveal">Травмы и острые состояния</h2>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">🔥</div>
-          <div><h4>Ожоги</h4><p>Термические ожоги от паяльника, химические от кислот и щелочей при работе с электронными компонентами.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">⚡</div>
-          <div><h4>Поражение электрическим током</h4><p>При работе с включёнными устройствами, пробном включении схем, диагностике неисправностей.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">👓</div>
-          <div><h4>Травмы глаз</h4><p>Мелкие осколки при обрезке выводов компонентов, отлетающие кусочки припоя.</p></div>
-        </div>
+      <div class="grid-3 reveal">
+        <div class="card"><div class="card-icon">🔥</div><h3>Ожоги</h3><p>Термические (паяльник) и химические (кислоты, щёлочи) при работе с электронными компонентами.</p></div>
+        <div class="card"><div class="card-icon">⚡</div><h3>Электротравмы</h3><p>При диагностике включённых устройств, пробном включении схем и работе под напряжением.</p></div>
+        <div class="card"><div class="card-icon">👓</div><h3>Травмы глаз</h3><p>Осколки при обрезке выводов, отлетающий припой. Обязательны защитные очки.</p></div>
       </div>
 
     </article>
@@ -148,10 +108,11 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-copy" data-i18n="footer.copy">© 2026 IT Health. Индивидуальный проект.</div>
+        <div class="footer-copy">© 2026 IT Health Lab. Не является медицинской консультацией.</div>
         <div class="footer-links">
-          <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
-          <span class="footer-copy" data-i18n="footer.disclaimer">Информация на сайте не является медицинской консультацией.</span>
+          <a href="resources.html">Ресурсы</a>
+          <a href="quiz.html">Тест</a>
+          <a href="index.html">Главная</a>
         </div>
       </div>
     </div>
