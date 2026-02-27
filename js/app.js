@@ -5,15 +5,14 @@ import { initReveal, initParallax, initReadingProgress, initCountUp, initPageTra
 import { initTheme, initShortcuts, initCursorGlow } from './ui.js';
 import { initSearch } from './search.js';
 import { initTOC } from './toc.js';
+import { mountCanvas } from './canvas.js';
 
 function initPWA() {
-  // Manifest
   const m = document.createElement('link');
   m.rel = 'manifest';
   m.href = './manifest.webmanifest';
   document.head.appendChild(m);
 
-  // Service worker
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').catch(() => {});
   }
@@ -71,7 +70,6 @@ function mountGlobalUI() {
     tocHost.dataset.toc = '1';
     tocHost.className = 'toc-host';
     tocHost.innerHTML = `<div class="toc-title">Оглавление</div>`;
-    // insert before first h2
     const h2 = article.querySelector('h2');
     if (h2) h2.parentNode.insertBefore(tocHost, h2);
   }
@@ -79,6 +77,17 @@ function mountGlobalUI() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initPWA();
+
+  // Canvas background style per page
+  if (document.body.classList.contains('home')) {
+    document.documentElement.dataset.canvasStyle = 'particles';
+  } else if (document.location.pathname.includes('mental')) {
+    document.documentElement.dataset.canvasStyle = 'waves';
+  } else {
+    document.documentElement.dataset.canvasStyle = 'mesh';
+  }
+
+  mountCanvas();
 
   mountGlobalUI();
 

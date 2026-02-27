@@ -13,28 +13,43 @@
   padding: var(--sp-12) 0;
 }
 
+/* Modern page layout helpers */
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.article {
+  width: 100%;
+}
+
 /* Grid helpers */
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--sp-8);
 }
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--sp-8);
 }
 .grid-4 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--sp-6);
 }
 
+/* Prevent overlapping and weird card widths on narrow screens */
+.grid-2 > *, .grid-3 > *, .grid-4 > * {
+  min-width: 0;
+}
+
 @media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: minmax(0, 1fr); }
   .section { padding: var(--sp-12) 0; }
 }
