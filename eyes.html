@@ -1,186 +1,88 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Здоровье глаз — IT Health</title>
-  <meta name="description" content="Профилактика компьютерного зрительного синдрома и упражнения для глаз">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪺</text></svg>">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Здоровье глаз — IT Health Lab</title>
+  <meta name="description" content="Правило 20-20-20, гимнастика для глаз, настройки экрана"/>
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
 </head>
 <body>
   <div class="reading-progress"></div>
-
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="logo-icon">⚕</span><span>IT Health</span></a>
-      <div class="nav-links">
-        <a href="index.html" data-i18n="nav.home">Главная</a>
-        <a href="diseases.html" data-i18n="nav.diseases">Заболевания</a>
-        <a href="risks.html" data-i18n="nav.risks">Факторы риска</a>
-        <a href="prevention.html" data-i18n="nav.prevention">Профилактика</a>
-        <a href="ergonomics.html" data-i18n="nav.ergonomics">Эргономика</a>
-        <a href="eyes.html" data-i18n="nav.eyes">Зрение</a>
-        <a href="mental.html" data-i18n="nav.mental">Ментальное здоровье</a>
-        <a href="exercises.html" data-i18n="nav.exercises">Упражнения</a>
-        <a href="quiz.html" data-i18n="nav.quiz">Тест</a>
-        <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
+      <a href="index.html" class="navbar-brand"><span class="logo-icon">🧪</span><span>IT Health Lab</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Главная</a>
+        <a href="diseases.html">Болезни</a>
+        <a href="prevention.html">Защита</a>
+        <a href="ergonomics.html">Эргономика</a>
+        <a href="exercises.html">Разминки</a>
+        <div class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false">Ещё ▾</button>
+          <div class="nav-dropdown">
+            <a href="risks.html">Факторы риска</a>
+            <a href="eyes.html">Зрение</a>
+            <a href="mental.html">Психика</a>
+            <a href="quiz.html">Тест</a>
+            <a href="resources.html">Ресурсы</a>
+          </div>
+        </div>
         <div class="lang-toggle"><button data-lang="ru">RU</button><button data-lang="en">EN</button></div>
       </div>
       <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </nav>
-
-  <section class="page-hero">
-    <div class="container">
-      <span class="tag reveal" data-i18n="nav.eyes">Зрение</span>
-      <h1 class="reveal" data-i18n="card.eyes.title">Здоровье глаз</h1>
-      <p class="reveal">Компьютерный зрительный синдром (КЗС) затрагивает до 90% пользователей ПК. Правильная профилактика снижает риск развития хронических заболеваний глаз.</p>
+  <section class="page-hero"><div class="container">
+    <span class="tag reveal">Зрение</span>
+    <h1 class="reveal">Здоровье глаз</h1>
+    <p class="reveal">Сухость, размытость, головные боли — всё это можно предотвратить. Вот как.</p>
+  </div></section>
+  <div class="container"><article class="article">
+    <div class="fact reveal">📌 При работе за экраном частота моргания снижается в 3–4 раза — с 15–20 до 4–5 раз/мин.</div>
+    <h2 class="reveal">Правило 20-20-20</h2>
+    <div class="card reveal" style="max-width:500px;text-align:center;margin:0 auto;">
+      <div style="font-size:3rem;margin-bottom:12px;">👁️</div>
+      <h3>Каждые 20 минут</h3>
+      <p style="font-size:var(--fs-lg);color:var(--clr-text);">Смотрите 20 секунд<br>на объект в 6 метрах</p>
+      <div class="fact" style="margin-top:16px;">Это расслабляет цилиарную мышцу и восстанавливает слёзную плёнку.</div>
     </div>
-  </section>
-
-  <div class="container">
-    <article class="article">
-
-      <div class="timer-widget reveal">
-        <h3>⏱️ Таймер правила 20-20-20</h3>
-        <p style="margin-bottom:var(--sp-4);color:var(--clr-text-muted);font-size:var(--fs-sm);">Каждые 20 минут смотрите на объект в 20 футах (6 метров) в течение 20 секунд</p>
-        <div class="timer-display" id="eyeTimer">20:00</div>
-        <div class="timer-controls">
-          <button class="btn btn-primary" id="eyeStart">▶ Старт</button>
-          <button class="btn btn-outline" id="eyeReset">↻ Сброс</button>
-        </div>
-      </div>
-
-      <h2 class="reveal">Компьютерный зрительный синдром (КЗС)</h2>
-      <p class="reveal">Комплекс симптомов, возникающих при длительной работе за компьютером или с мелкими деталями.</p>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">👁️</div>
-          <div><h4>Симптомы</h4><p>Сухость, жжение, покраснение глаз. Размытость зрения, двоение. Головные боли, особенно в области лба и висков. Повышенная чувствительность к свету. Ощущение песка в глазах.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔬</div>
-          <div><h4>Причины</h4><p>Снижение частоты моргания с 15–20 до 4–5 раз в минуту при концентрации на экране. Испарение слёзной плёнки, пересыхание роговицы. Перенапряжение глазных мышц при фокусировке на близком расстоянии.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Правило 20-20-20</h2>
-      <div class="callout callout-info reveal">
-        <span class="callout-icon">✅</span>
-        <div class="callout-text">Каждые <strong>20 минут</strong> работы за компьютером смотрите на объект на расстоянии <strong>20 футов</strong> (6 метров) в течение <strong>20 секунд</strong>. Это даёт глазным мышцам отдых и восстанавливает слёзную плёнку.</div>
-      </div>
-      <p class="reveal">Используйте таймер выше для автоматического напоминания. Во время 20-секундного перерыва встаньте, посмотрите в окно, поморгайте 10–15 раз.</p>
-
-      <h2 class="reveal">Гимнастика для глаз</h2>
-      <p class="reveal">Упражнения укрепляют глазные мышцы, улучшают кровообращение, снимают спазм аккомодации. Выполнять 2–3 раза в день по 5 минут.</p>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">🔄</div>
-          <div><h4>Круговые движения</h4><p>Медленно вращайте глазами по часовой стрелке 5 раз, затем против часовой 5 раз. Голова неподвижна. Повторить 2–3 подхода.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">↔️</div>
-          <div><h4>Горизонтальные и вертикальные движения</h4><p>Посмотрите максимально влево, затем вправо (по 5 раз). Вверх-вниз (по 5 раз). Диагонали: левый верх — правый низ, правый верх — левый низ (по 5 раз).</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔭</div>
-          <div><h4>Фокусировка ближе-дальше</h4><p>Вытяните руку, сфокусируйтесь на пальце (3 секунды). Переведите взгляд на далёкий объект (3 секунды). Повторить 10 раз. Тренирует мышцы хрусталика.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">👁️‍🗨️</div>
-          <div><h4>Моргание</h4><p>Быстро моргайте 10–15 раз. Закройте глаза на 5 секунд. Откройте, снова моргайте. Повторить 3 раза. Увлажняет роговицу, снимает сухость.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">✋</div>
-          <div><h4>Пальминг</h4><p>Потрите ладони друг о друга до тепла. Закройте глаза, накройте ладонями (не давите). Расслабьтесь на 1–2 минуты в темноте. Снимает напряжение, даёт глубокий отдых.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🎯</div>
-          <div><h4>Рисование восьмёрки</h4><p>Глазами нарисуйте горизонтальную восьмёрку (знак бесконечности ∞). Медленно, 5 раз в одну сторону, 5 раз в другую. Комплексная тренировка всех мышц.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Настройка монитора</h2>
-      <ul class="reveal">
-        <li><strong>Яркость</strong> — должна соответствовать освещению в комнате (не ярче окружающего пространства)</li>
-        <li><strong>Контрастность</strong> — 60–70%, чёрный текст на белом фоне (или тёмная тема с низкой яркостью)</li>
-        <li><strong>Размер шрифта</strong> — высота букв 3–4 мм с расстояния 50–70 см, кегль 12–14 pt минимум</li>
-        <li><strong>Цветовая температура</strong> — днём 5000–6500K (нейтральный), вечером 3500–4500K (тёплый)</li>
-        <li><strong>Частота обновления</strong> — не менее 75 Гц, в идеале 120+ Гц (снижает мерцание)</li>
-        <li><strong>Фильтр синего света</strong> — встроенный режим «защита зрения» или программы типа f.lux после 18:00</li>
-        <li><strong>Антибликовое покрытие</strong> — матовый экран или защитная плёнка против отражений</li>
-      </ul>
-
-      <h2 class="reveal">Освещение рабочего места</h2>
-      <div class="grid-2 reveal">
-        <div class="card">
-          <div class="card-icon">💡</div>
-          <h3>Общее освещение</h3>
-          <p>300–500 лк, равномерное по всему помещению. Избегать резких теней. Источники света за спиной или сбоку от монитора, не сзади экрана (создаёт блики).</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔦</div>
-          <h3>Локальная подсветка</h3>
-          <p>Настольная лампа 500–750 лк для работы с документами. Свет падает слева (для правшей). LED-лампы тёплого спектра (3000–4000K), без мерцания (flicker-free).</p>
-        </div>
-      </div>
-
-      <h2 class="reveal">Защитные очки и увлажнение</h2>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">🕶️</div>
-          <div><h4>Компьютерные очки</h4><p>Антибликовое покрытие снижает отражения. Фильтр синего света (блокирует 30–50% сине-фиолетового спектра). Слабая коррекция для работы на расстоянии 50–70 см (даже при нормальном зрении).</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">💧</div>
-          <div><h4>Увлажняющие капли</h4><p>«Искусственная слеза» (гипромеллоза, гиалуроновая кислота) при сухости. Закапывать 2–4 раза в день. Избегать сосудосуживающих капель (вызывают привыкание).</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🌫️</div>
-          <div><h4>Увлажнитель воздуха</h4><p>Поддерживать влажность 40–60% (зимой воздух пересыхает из-за отопления). Ставить на стол или рядом с рабочим местом. Проветривать помещение каждые 2 часа.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Питание для здоровья глаз</h2>
-      <p class="reveal">Витамины и микроэлементы, важные для зрения.</p>
-      <ul class="reveal">
-        <li><strong>Витамин A</strong> — морковь, тыква, печень (поддерживает сетчатку, ночное зрение)</li>
-        <li><strong>Лютеин и зеаксантин</strong> — шпинат, капуста, яйца (защищают макулу от повреждений)</li>
-        <li><strong>Омега-3</strong> — рыба (лосось, скумбрия), льняное масло (уменьшают сухость глаз)</li>
-        <li><strong>Витамин C</strong> — цитрусовые, киви, перец (антиоксидант, укрепляет сосуды глаз)</li>
-        <li><strong>Цинк</strong> — орехи, бобовые, морепродукты (участвует в метаболизме сетчатки)</li>
-        <li><strong>Черника</strong> — антоцианы улучшают кровоснабжение сетчатки (эффект временный, но есть)</li>
-      </ul>
-
-      <h2 class="reveal">Когда обратиться к врачу</h2>
-      <div class="callout callout-warning reveal">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-text">
-          Немедленно к офтальмологу при: резком ухудшении зрения, появлении «мушек», вспышек, тёмных пятен, двоении, сильной боли в глазах, покраснении с выделениями. Плановый осмотр — 1 раз в год (при работе за ПК более 4 часов в день).
-        </div>
-      </div>
-
-    </article>
-  </div>
-
+    <h2 class="reveal">Гимнастика для глаз</h2>
+    <div class="grid-2 reveal">
+      <div class="card"><div class="card-icon">🔄</div><h3>Круговые движения</h3><p>Медленно вращайте глазами по кругу — 5 раз по часовой, 5 против. Снимает напряжение глазодвигательных мышц.</p></div>
+      <div class="card"><div class="card-icon">↔️</div><h3>Горизонтали</h3><p>Смотрите максимально влево → задержка 2 с → вправо. 10 повторений. Расширяет поле и тренирует мышцы.</p></div>
+      <div class="card"><div class="card-icon">🖐️</div><h3>Пальминг</h3><p>Тёплые ладони на закрытые глаза. 30–60 секунд. Полная темнота расслабляет сетчатку и мышцы.</p></div>
+      <div class="card"><div class="card-icon">🔍</div><h3>Ближе-дальше</h3><p>Карандаш на вытянутой руке → медленно подносите к носу → обратно. 10 раз. Тренирует аккомодацию.</p></div>
+    </div>
+    <h2 class="reveal">Настройки экрана</h2>
+    <div class="feature-list reveal">
+      <div class="feature-item"><div class="feature-icon">🔆</div><div><h4>Яркость</h4><p>Должна соответствовать окружению. Белый фон на экране не должен «светить как лампа» и не должен быть серым.</p></div></div>
+      <div class="feature-item"><div class="feature-icon">🌡️</div><div><h4>Цветовая температура</h4><p>Днём 5500–6500 K (нейтральный). После 19:00 — 3500–4000 K (тёплый). f.lux / Night Shift автоматизируют.</p></div></div>
+      <div class="feature-item"><div class="feature-icon">📏</div><div><h4>Размер шрифта</h4><p>Минимум 12–14 пт при расстоянии 60 см. Масштаб 125–150% на HiDPI. Не щурьтесь — увеличьте.</p></div></div>
+    </div>
+    <h2 class="reveal">Увлажнение</h2>
+    <div class="grid-2 reveal">
+      <div class="card"><div class="card-icon">💧</div><h3>Воздух</h3><p>Влажность 40–60%. Увлажнитель или миска с водой у батареи. Кондиционер сушит — компенсируйте.</p></div>
+      <div class="card"><div class="card-icon">💦</div><h3>Капли</h3><p>Искусственная слеза (без консервантов) — при первых признаках сухости. Не «визин» — он сужает сосуды.</p></div>
+    </div>
+  </article></div>
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-copy" data-i18n="footer.copy">© 2026 IT Health. Индивидуальный проект.</div>
+        <div class="footer-copy">© 2026 IT Health Lab. Не является медицинской консультацией.</div>
         <div class="footer-links">
-          <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
-          <span class="footer-copy" data-i18n="footer.disclaimer">Информация на сайте не является медицинской консультацией.</span>
+          <a href="resources.html">Ресурсы</a>
+          <a href="quiz.html">Тест</a>
+          <a href="index.html">Главная</a>
         </div>
       </div>
     </div>
   </footer>
-
   <script type="module" src="js/app.js"></script>
-  <script type="module" src="js/eyeTimer.js"></script>
 </body>
 </html>

@@ -1,184 +1,90 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Эргономика — IT Health</title>
-  <meta name="description" content="Организация эргономичного рабочего места IT-специалиста">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪺</text></svg>">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Эргономика рабочего места — IT Health Lab</title>
+  <meta name="description" content="Настройка стола, кресла, монитора, клавиатуры и освещения"/>
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
 </head>
 <body>
   <div class="reading-progress"></div>
-
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="logo-icon">⚕</span><span>IT Health</span></a>
-      <div class="nav-links">
-        <a href="index.html" data-i18n="nav.home">Главная</a>
-        <a href="diseases.html" data-i18n="nav.diseases">Заболевания</a>
-        <a href="risks.html" data-i18n="nav.risks">Факторы риска</a>
-        <a href="prevention.html" data-i18n="nav.prevention">Профилактика</a>
-        <a href="ergonomics.html" data-i18n="nav.ergonomics">Эргономика</a>
-        <a href="eyes.html" data-i18n="nav.eyes">Зрение</a>
-        <a href="mental.html" data-i18n="nav.mental">Ментальное здоровье</a>
-        <a href="exercises.html" data-i18n="nav.exercises">Упражнения</a>
-        <a href="quiz.html" data-i18n="nav.quiz">Тест</a>
-        <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
+      <a href="index.html" class="navbar-brand"><span class="logo-icon">🧪</span><span>IT Health Lab</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Главная</a>
+        <a href="diseases.html">Болезни</a>
+        <a href="prevention.html">Защита</a>
+        <a href="ergonomics.html">Эргономика</a>
+        <a href="exercises.html">Разминки</a>
+        <div class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false">Ещё ▾</button>
+          <div class="nav-dropdown">
+            <a href="risks.html">Факторы риска</a>
+            <a href="eyes.html">Зрение</a>
+            <a href="mental.html">Психика</a>
+            <a href="quiz.html">Тест</a>
+            <a href="resources.html">Ресурсы</a>
+          </div>
+        </div>
         <div class="lang-toggle"><button data-lang="ru">RU</button><button data-lang="en">EN</button></div>
       </div>
       <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </nav>
-
-  <section class="page-hero">
-    <div class="container">
-      <span class="tag reveal" data-i18n="nav.ergonomics">Эргономика</span>
-      <h1 class="reveal" data-i18n="card.ergonomics.title">Эргономика</h1>
-      <p class="reveal">Правильная организация рабочего места — основа профилактики профессиональных заболеваний. Эргономика снижает нагрузку на опорно-двигательный аппарат, зрение и нервную систему.</p>
+  <section class="page-hero"><div class="container">
+    <span class="tag reveal">Настройка</span>
+    <h1 class="reveal">Эргономика рабочего места</h1>
+    <p class="reveal">Правильная организация рабочего пространства снимает до 80% «офисных» симптомов. Вот как это сделать.</p>
+  </div></section>
+  <div class="container"><article class="article">
+    <div class="fact reveal">📌 Факт: неправильная высота монитора на 5 см увеличивает нагрузку на шейные позвонки на 2–3 кг.</div>
+    <h2 class="reveal">Монитор</h2>
+    <div class="grid-2 reveal">
+      <div class="card"><div class="card-icon">📐</div><h3>Позиция</h3><p>Верхний край — на уровне глаз или чуть ниже. Расстояние 50–70 см. Наклон 10–20° назад. Центр экрана — на 15–20° ниже линии взгляда.</p></div>
+      <div class="card"><div class="card-icon">🔆</div><h3>Настройки</h3><p>Яркость = яркость окружения. Контраст 60–80%. Частота ≥75 Гц. Ночной режим / f.lux после 19:00. Без PWM — IPS или OLED.</p></div>
     </div>
-  </section>
-
-  <div class="container">
-    <article class="article">
-
-      <h2 class="reveal">Рабочий стол</h2>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">📐</div>
-          <div><h4>Высота стола</h4><p>70–75 см от пола для человека среднего роста. При работе локти должны быть согнуты под углом 90° и свободно лежать на столе. Идеально — стол с регулируемой высотой (sit-stand desk).</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📏</div>
-          <div><h4>Глубина столешницы</h4><p>Не менее 60–80 см, чтобы монитор находился на расстоянии вытянутой руки (50–70 см от глаз). Должно оставаться место для клавиатуры, мыши и документов.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🧹</div>
-          <div><h4>Порядок на столе</h4><p>Убрать лишние предметы. Часто используемые вещи — в зоне досягаемости (радиус 35–40 см). Кабели закреплены, не мешают движению ног.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Кресло</h2>
-      <p class="reveal">Кресло — самый важный элемент рабочего места для тех, кто проводит за компьютером более 4 часов в день.</p>
-      <ul class="reveal">
-        <li><strong>Регулируемая высота</strong> — стопы полностью на полу, бёдра параллельны полу или чуть выше (угол в коленях 90–110°)</li>
-        <li><strong>Поясничная поддержка</strong> — изгиб спинки повторяет естественный лордоз поясницы, поддерживает позвоночник</li>
-        <li><strong>Спинка</strong> — высота до лопаток минимум, в идеале — с подголовником для поддержки шеи</li>
-        <li><strong>Подлокотники</strong> — регулируются по высоте так, чтобы плечи были расслаблены, локти под углом 90°</li>
-        <li><strong>Сиденье</strong> — глубина 40–45 см, передний край скруглён (не давит под колени), материал дышащий</li>
-        <li><strong>Ролики</strong> — подходят к типу пола (ковёр/ламинат), кресло устойчивое, не качается</li>
-      </ul>
-
-      <div class="callout callout-info reveal">
-        <span class="callout-icon">💡</span>
-        <div class="callout-text">При работе стоя (standing desk) используйте антиусталостный коврик. Чередуйте позу сидя/стоя каждые 30–60 минут. Это снижает нагрузку на позвоночник и улучшает кровообращение.</div>
-      </div>
-
-      <h2 class="reveal">Монитор</h2>
-      <div class="grid-2 reveal">
-        <div class="card">
-          <div class="card-icon">🖥️</div>
-          <h3>Расположение</h3>
-          <p>Верхний край экрана на уровне глаз или чуть ниже. Взгляд направлен вниз под углом 10–20°. Расстояние 50–70 см (длина вытянутой руки). Монитор перпендикулярен окну (не бликует).</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔆</div>
-          <h3>Настройки</h3>
-          <p>Яркость адаптирована к освещению в помещении. Контрастность 60–70%. Тёплая цветовая температура (3500–4500K). Частота обновления не менее 75 Гц. Включить фильтр синего света вечером.</p>
-        </div>
-      </div>
-
-      <h2 class="reveal">Клавиатура и мышь</h2>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">⌨️</div>
-          <div><h4>Клавиатура</h4><p>Плоская или с небольшим наклоном (до 10°). Располагается прямо перед пользователем на расстоянии 10–15 см от края стола. Кисти в нейтральном положении (не согнуты вверх/вниз). Есть подставка для запястий.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🖱️</div>
-          <div><h4>Мышь</h4><p>Размер соответствует руке. Лежит рядом с клавиатурой на одной высоте. Вертикальная мышь снижает пронацию предплечья. Коврик с гелевой подушкой для запястья. Избегать чрезмерного сжатия и резких движений.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🎮</div>
-          <div><h4>Альтернативы</h4><p>Трекбол — снижает нагрузку на запястье. Графический планшет — для дизайнеров. Эргономичная сплит-клавиатура. Хоткеи и макросы для частых действий.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Освещение</h2>
-      <p class="reveal">Неправильное освещение — одна из главных причин зрительного утомления и головных болей.</p>
-      <ul class="reveal">
-        <li><strong>Общее освещение</strong> — 300–500 лк, равномерное, без резких теней</li>
-        <li><strong>Рабочее (локальное) освещение</strong> — настольная лампа 500–750 лк, свет падает слева (для правшей) или справа (для левшей)</li>
-        <li><strong>Естественный свет</strong> — окно сбоку от монитора, жалюзи регулируют яркость</li>
-        <li><strong>Тип ламп</strong> — LED с тёплым белым светом (3000–4000K), без мерцания (flicker-free)</li>
-        <li><strong>Блики</strong> — избегать отражений на мониторе, использовать матовые покрытия экрана</li>
-      </ul>
-
-      <h2 class="reveal">Микроклимат</h2>
-      <div class="grid-2 reveal">
-        <div class="card">
-          <div class="card-icon">🌡️</div>
-          <h3>Температура и влажность</h3>
-          <p>Оптимальная температура 20–24°C. Влажность 40–60% (при низкой влажности сохнут глаза и слизистые). Использовать увлажнитель воздуха зимой. Избегать сквозняков и прямого потока кондиционера.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💨</div>
-          <h3>Вентиляция</h3>
-          <p>Проветривание каждые 2 часа. Обязательная вытяжка в зонах пайки. Очистители воздуха с HEPA-фильтрами для удаления пыли и аллергенов. Растения улучшают микроклимат.</p>
-        </div>
-      </div>
-
-      <h2 class="reveal">Организация пространства</h2>
-      <div class="feature-list reveal">
-        <div class="feature-item">
-          <div class="feature-icon">📱</div>
-          <div><h4>Второй монитор</h4><p>Располагается на одной линии с основным или под углом 30°. Высота та же. Уменьшает повороты головы и переключение контекста. Повышает продуктивность на 20–30%.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔊</div>
-          <div><h4>Акустика</h4><p>Наушники с шумоподавлением в open-space. Колонки на уровне ушей. Уровень шума не более 55 дБ. Звукопоглощающие панели для снижения эха в больших помещениях.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🪴</div>
-          <div><h4>Эстетика и комфорт</h4><p>Личные предметы (фото, растения) создают психологический комфорт. Цветовая гамма спокойная (зелёный, синий, бежевый). Порядок на столе = порядок в голове.</p></div>
-        </div>
-      </div>
-
-      <h2 class="reveal">Рабочее место для пайки и обслуживания</h2>
-      <p class="reveal">Специфические требования для специалистов, работающих с электроникой.</p>
-      <ul class="reveal">
-        <li><strong>Паяльная станция с вытяжкой</strong> — обязательный отсос паров флюса</li>
-        <li><strong>Лупа с подсветкой</strong> — освещённость 1000+ лк, увеличение 2–5x</li>
-        <li><strong>Антистатический коврик и браслет</strong> — защита компонентов от ЭСР</li>
-        <li><strong>Подставки для инструментов</strong> — организация, быстрый доступ</li>
-        <li><strong>Диэлектрический коврик</strong> — под ногами для электробезопасности</li>
-        <li><strong>Хранение компонентов</strong> — органайзеры, маркировка, защита от пыли</li>
-      </ul>
-
-      <div class="callout callout-warning reveal">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-text"><strong>Важно:</strong> даже самое эргономичное рабочее место не заменит регулярных перерывов и физической активности. Вставайте каждые 45–60 минут, делайте разминку, меняйте позу.</div>
-      </div>
-
-    </article>
-  </div>
-
+    <h2 class="reveal">Кресло</h2>
+    <div class="feature-list reveal">
+      <div class="feature-item"><div class="feature-icon">🪑</div><div><h4>Высота</h4><p>Стопы полностью на полу, бёдра параллельны полу (угол колен ~90°). Если стол высокий — подставка для ног.</p></div></div>
+      <div class="feature-item"><div class="feature-icon">🔙</div><div><h4>Спинка</h4><p>Поясничный валик на уровне L3–L5. Наклон спинки 100–110°. Спина прижата — не «вися» в воздухе.</p></div></div>
+      <div class="feature-item"><div class="feature-icon">💺</div><div><h4>Подлокотники</h4><p>На уровне стола, чтобы плечи были расслаблены. Локти ~90°, предплечья опираются, запястья нейтрально.</p></div></div>
+    </div>
+    <h2 class="reveal">Клавиатура и мышь</h2>
+    <div class="grid-2 reveal">
+      <div class="card"><div class="card-icon">⌨️</div><h3>Клавиатура</h3><p>Плоская (без ножек) или с отрицательным наклоном. Запястья не опираются на жёсткий край — мягкая подставка или парение в воздухе.</p></div>
+      <div class="card"><div class="card-icon">🖱️</div><h3>Мышь</h3><p>Эргономичная (вертикальная) или трекбол. Рука расслаблена, не вывернута. Коврик с гелевой подставкой для запястья.</p></div>
+    </div>
+    <h2 class="reveal">Освещение</h2>
+    <div class="grid-3 reveal">
+      <div class="card"><div class="card-icon">☀️</div><h3>Общее</h3><p>300–500 люкс. Равномерное, без резких теней. Естественный свет сбоку — не напротив и не за спиной.</p></div>
+      <div class="card"><div class="card-icon">🔦</div><h3>Рабочая лампа</h3><p>Слева для правшей. 4000–5000 K днём, 2700–3000 K вечером. Светодиодная без мерцания.</p></div>
+      <div class="card"><div class="card-icon">🌅</div><h3>Вечер</h3><p>f.lux / Night Shift. Уменьшить общий свет. Никаких ярких потолочных ламп — только мягкий боковой.</p></div>
+    </div>
+    <h2 class="reveal">Стоя-сидя</h2>
+    <div class="callout callout-info reveal">
+      <span class="callout-icon">💡</span>
+      <div class="callout-text">Идеальный режим: 30 минут сидя → 10 минут стоя → 5 минут ходьбы. Стол-трансформер или подставка для ноутбука — бюджетное решение от 3 000 ₽.</div>
+    </div>
+  </article></div>
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-copy" data-i18n="footer.copy">© 2026 IT Health. Индивидуальный проект.</div>
+        <div class="footer-copy">© 2026 IT Health Lab. Не является медицинской консультацией.</div>
         <div class="footer-links">
-          <a href="resources.html" data-i18n="nav.resources">Ресурсы</a>
-          <span class="footer-copy" data-i18n="footer.disclaimer">Информация на сайте не является медицинской консультацией.</span>
+          <a href="resources.html">Ресурсы</a>
+          <a href="quiz.html">Тест</a>
+          <a href="index.html">Главная</a>
         </div>
       </div>
     </div>
   </footer>
-
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
