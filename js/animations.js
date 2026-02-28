@@ -33,6 +33,9 @@ export function initReadingProgress() {
   const bar = document.querySelector('.reading-progress');
   if (!bar) return;
 
+  bar.style.transformOrigin = 'left';
+  bar.style.transform = 'scaleX(0)';
+
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -70,22 +73,21 @@ export function initCountUp() {
   counters.forEach(c => observer.observe(c));
 }
 
-/* Smooth page transitions */
+/* Smooth page transitions — NO e.preventDefault(), links work natively */
 export function initPageTransitions() {
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
 
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
+    link.addEventListener('click', () => {
       document.body.classList.add('page-exit');
-      setTimeout(() => { window.location.href = href; }, 300);
     });
   });
 
-  window.addEventListener('pageshow', () => {
+  window.addEventListener('pageshow', (e) => {
     document.body.classList.remove('page-exit');
-    document.body.classList.add('page-enter');
-    setTimeout(() => document.body.classList.remove('page-enter'), 500);
+    if (e.persisted) {
+      document.body.style.opacity = '1';
+    }
   });
 }
