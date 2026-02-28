@@ -19,3 +19,10 @@ img{max-width:100%;height:auto;display:block}
 ul,ol{list-style:none}
 ::selection{background:var(--clr-primary);color:var(--clr-bg)}
 :focus-visible{outline:2px solid var(--clr-primary);outline-offset:3px}
+
+/* ========== NAV CLICK FIX ========== */
+.navbar{pointer-events:auto}
+.navbar *{pointer-events:auto}
+.navbar{z-index:9999}
+.nav-links{z-index:10000}
+.nav-dropdown{z-index:10001}
