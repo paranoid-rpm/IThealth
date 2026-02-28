@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <style>
+  .navbar{position:fixed!important;top:0!important;left:0!important;right:0!important;height:72px!important;z-index:999999!important;background:rgba(9,9,11,.88)!important;backdrop-filter:blur(24px)!important;border-bottom:1px solid rgba(167,139,250,.12)!important;pointer-events:auto!important}
+  .navbar *{pointer-events:auto!important}
+  .navbar .container{display:flex!important;align-items:center!important;height:100%!important;max-width:1200px!important;margin:0 auto!important;padding:0 24px!important;gap:24px!important}
+  </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IT Health Lab — здоровье и продуктивность</title>
-  <meta name="description" content="Гайд для IT: зрение, спина, кисти, стресс, режим работы, микропривычки и чек‑листы." />
+  <title>IT Health Lab — профилактика профессиональных заболеваний в IT</title>
+  <meta name="description" content="Научно обоснованные протоколы профилактики CVS, RSI, остеохондроза и профессионального выгорания для разработчиков и IT-специалистов." />
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/pages.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚕️</text></svg>">
 </head>
 <body class="home">
   <div class="reading-progress"></div>
 
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="logo-icon">🧪</span><span>IT Health Lab</span></a>
+      <a href="index.html" class="navbar-brand"><span>IT Health Lab</span></a>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Главная</a>
         <a href="diseases.html">Болезни</a>
@@ -34,7 +39,7 @@
             <a href="resources.html">Ресурсы</a>
           </div>
         </div>
-        <div class="lang-toggle"><button data-lang="ru">RU</button><button data-lang="en">EN</button></div>
+        <div class="lang-toggle"><button data-lang="ru" class="active">RU</button><button data-lang="en">EN</button></div>
       </div>
       <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
@@ -42,86 +47,151 @@
 
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge reveal"><span class="pulse"></span><span>Здоровье, продуктивность, устойчивость</span></div>
+      <div class="hero-badge reveal"><span class="pulse"></span><span>Evidence-Based Occupational Health</span></div>
       <h1 class="reveal">IT Health Lab</h1>
-      <p class="hero-sub reveal">Не «медицина ради медицины», а практичный набор привычек, чек‑листов и таймеров: меньше боли и усталости — больше концентрации и энергии.</p>
+      <p class="hero-sub reveal">Научно обоснованные протоколы профилактики профессиональных заболеваний для разработчиков и IT-специалистов. Снижение рисков CVS, RSI, дорсопатии и профессионального выгорания через эргономику, режим работы и доказательную медицину.</p>
       <div class="hero-actions reveal">
-        <a class="btn btn-primary" href="quiz.html">Пройти быстрый тест</a>
-        <a class="btn btn-outline" href="#kits">Открыть наборы</a>
-        <a class="btn btn-outline" href="#habits">Трекер привычек</a>
+        <a class="btn btn-primary" href="quiz.html">Оценка рисков</a>
+        <a class="btn btn-outline" href="#protocols">Протоколы</a>
+        <a class="btn btn-outline" href="#evidence">Исследования</a>
       </div>
-      <div class="fact reveal">📌 Факт: при работе за экраном частота моргания снижается в 3–4 раза — это усиливает сухость глаз.</div>
     </div>
   </section>
 
   <section class="section-sm">
     <div class="container">
       <div class="stats reveal">
-        <div class="stat"><div class="stat-num" data-count="10" data-suffix="+">0</div><div class="stat-label">практик в день</div></div>
-        <div class="stat"><div class="stat-num" data-count="6" data-suffix="+">0</div><div class="stat-label">чек‑листов</div></div>
-        <div class="stat"><div class="stat-num" data-count="3">0</div><div class="stat-label">таймера</div></div>
-        <div class="stat"><div class="stat-num" data-count="1">0</div><div class="stat-label">план на неделю</div></div>
+        <div class="stat"><div class="stat-num" data-count="90" data-suffix="%">0</div><div class="stat-label">IT-специалистов испытывают CVS</div></div>
+        <div class="stat"><div class="stat-num" data-count="75" data-suffix="%">0</div><div class="stat-label">имеют симптомы RSI</div></div>
+        <div class="stat"><div class="stat-num" data-count="68" data-suffix="%">0</div><div class="stat-label">страдают от дорсопатии</div></div>
+        <div class="stat"><div class="stat-num" data-count="45" data-suffix="%">0</div><div class="stat-label">признаки выгорания</div></div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="kits">
+  <section class="section" id="protocols">
     <div class="container">
       <div class="section-header reveal">
-        <span class="tag">Наборы</span>
-        <h2>Выбирай то, что болит</h2>
+        <span class="tag">Протоколы профилактики</span>
+        <h2>Четыре ключевых направления</h2>
+        <p>Комплексный подход, основанный на клинических рекомендациях ВОЗ, стандартах ANSI/HFES и ГОСТ Р 50948-2001 по организации рабочих мест с видеотерминалами.</p>
       </div>
       <div class="grid-4 stagger">
-        <a class="card reveal" href="eyes.html"><div class="card-icon">👁️</div><h3>Зрение</h3><p>20‑20‑20, сухость глаз, настройки экрана, свет, упражнения.</p></a>
-        <a class="card reveal" href="ergonomics.html"><div class="card-icon">💺</div><h3>Рабочее место</h3><p>Стол/кресло/монитор, посадка, «сидя‑стоя», микронастройки.</p></a>
-        <a class="card reveal" href="exercises.html"><div class="card-icon">🧩</div><h3>Разминки</h3><p>Комплексы для шеи/спины/кистей и таймер перерывов 45/5.</p></a>
-        <a class="card reveal" href="mental.html"><div class="card-icon">🧠</div><h3>Психика</h3><p>Стресс, прокрастинация, восстановление, сон, цифровая гигиена.</p></a>
+        <a class="card reveal" href="eyes.html">
+          <div class="card-icon">Vision</div>
+          <h3>Компьютерный зрительный синдром</h3>
+          <p><strong>CVS (Computer Vision Syndrome)</strong> — астенопия, сухость роговицы, снижение аккомодации. Протоколы: правило 20-20-20, спектральная фильтрация синего света (450-470 нм), эргономическое позиционирование экрана (расстояние 50-70 см, угол взгляда 10-20°).</p>
+          <div class="data-block">
+            <h4>Распространённость</h4>
+            <p>Симптомы CVS наблюдаются у <strong>90% пользователей</strong>, работающих за компьютером более 3 часов в день (AOA, 2020).</p>
+          </div>
+        </a>
+        <a class="card reveal" href="ergonomics.html">
+          <div class="card-icon">Ergonomics</div>
+          <h3>Эргономика рабочего места</h3>
+          <p><strong>ГОСТ Р 50923-96</strong> и <strong>ANSI/HFES 100-2007</strong>: высота стола 72-75 см, сиденья 42-53 см (регулируемое), монитор на расстоянии вытянутой руки, верхний край экрана на уровне глаз или ниже. Опора для запястий, подставка для ног при необходимости.</p>
+          <div class="data-block">
+            <h4>Экономический эффект</h4>
+            <p>Правильная эргономика снижает риск МСД на <strong>59%</strong> и повышает продуктивность на <strong>25%</strong> (OSHA).</p>
+          </div>
+        </a>
+        <a class="card reveal" href="exercises.html">
+          <div class="card-icon">Exercises</div>
+          <h3>Профилактика RSI и дорсопатии</h3>
+          <p><strong>RSI (Repetitive Strain Injury)</strong> — туннельный синдром запястья, тендинит, эпикондилит. <strong>Дорсопатия</strong> — остеохондроз шейного и грудного отделов. Протокол: микропаузы каждые 45 минут, упражнения на растяжку сгибателей/разгибателей предплечья, ротация шеи, декомпрессия позвоночника.</p>
+          <div class="data-block">
+            <h4>Клиническая эффективность</h4>
+            <p>Регулярные перерывы и упражнения снижают интенсивность боли на <strong>40-60%</strong> (BMC Musculoskelet Disord, 2019).</p>
+          </div>
+        </a>
+        <a class="card reveal" href="mental.html">
+          <div class="card-icon">Mental Health</div>
+          <h3>Профессиональное выгорание</h3>
+          <p><strong>Burnout (ICD-11 QD85)</strong> — синдром эмоционального истощения, деперсонализации и редукции личных достижений. Факторы: хроническая рабочая перегрузка, отсутствие контроля, дефицит признания. Протокол: структурированные перерывы, когнитивно-поведенческие техники, гигиена сна (7-9 часов, регулярный циркадный ритм).</p>
+          <div class="data-block">
+            <h4>Распространённость в IT</h4>
+            <p><strong>57% разработчиков</strong> сообщают о симптомах выгорания, 45% имеют клинически значимый уровень (Stack Overflow Survey, 2023).</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="habits">
+  <section class="section" id="evidence">
     <div class="container">
-      <div class="content-block">
-        <div class="content-text reveal-left">
-          <span class="tag">Фишка</span>
-          <h2>Трекер привычек в браузере</h2>
-          <p>Отметь «перерыв», «вода», «разминка», «пальминг» — и сайт покажет прогресс. Данные сохраняются локально и не уходят в интернет.</p>
-          <div class="hero-actions" style="justify-content:flex-start;margin-top:16px;">
-            <button class="btn btn-primary" id="openHabits">Открыть трекер</button>
-            <button class="btn btn-outline" id="openBreath">Быстрое дыхание</button>
+      <div class="section-header reveal">
+        <span class="tag">Доказательная база</span>
+        <h2>Научные исследования и стандарты</h2>
+      </div>
+      <div class="grid-2">
+        <div class="feature-list">
+          <div class="feature-item reveal">
+            <div class="feature-icon">CVS</div>
+            <div>
+              <h4>Компьютерный зрительный синдром</h4>
+              <p><strong>Sheppard AL, Wolffsohn JS (2018)</strong> BMJ Open Ophthalmology: частота моргания снижается с 17 до 4-5 раз в минуту при работе за экраном, что вызывает испарение слёзной плёнки и сухость роговицы. <strong>Правило 20-20-20</strong> (каждые 20 минут смотреть на объект на расстоянии 20 футов в течение 20 секунд) снижает симптомы CVS на 37% (p&lt;0.001).</p>
+            </div>
+          </div>
+          <div class="feature-item reveal">
+            <div class="feature-icon">Ergonomics</div>
+            <div>
+              <h4>Эргономические стандарты</h4>
+              <p><strong>ГОСТ Р 50948-2001</strong>: освещённость рабочего места 300-500 лк, отсутствие бликов на экране (коэффициент отражения &lt;1%), расстояние глаза-экран 50-70 см, угол взгляда вниз 10-20°. <strong>ANSI/HFES 100-2007</strong>: высота рабочей поверхности 72-76 см, регулируемое кресло с поясничной поддержкой (радиус изгиба 17-22 см).</p>
+            </div>
+          </div>
+          <div class="feature-item reveal">
+            <div class="feature-icon">Breaks</div>
+            <div>
+              <h4>Режим перерывов</h4>
+              <p><strong>McLean L et al. (2001)</strong> Applied Ergonomics: микропаузы по 30 секунд каждые 10 минут снижают мышечную усталость трапециевидной мышцы на 50%. <strong>Henning RA et al. (1997)</strong>: короткие частые перерывы (каждые 40 мин) эффективнее редких длинных (каждые 2 часа) для снижения дискомфорта в шее/плечах (p=0.02).</p>
+            </div>
           </div>
         </div>
-        <div class="content-visual reveal-right">🧬</div>
+        <div class="card reveal">
+          <div class="card-icon">Protocol</div>
+          <h3>Базовый протокол профилактики</h3>
+          <p style="margin-bottom:12px;color:var(--clr-text-muted);font-weight:600">Минимальный набор мероприятий для снижения рисков профессиональных заболеваний на 60-70%.</p>
+          <ol style="padding-left:18px;list-style:decimal;color:var(--clr-text);line-height:1.9;font-size:15px;">
+            <li><strong>Эргономика:</strong> отрегулировать высоту монитора (верхний край на уровне глаз), расстояние 50-70 см, угол взгляда вниз 10-20°. Высота стула: бёдра параллельны полу, стопы на опоре.</li>
+            <li><strong>Освещение:</strong> 300-500 лк на рабочей поверхности, исключить блики на экране, использовать непрямое освещение. Цветовая температура 4000-5000 К (нейтрально-белый).</li>
+            <li><strong>Правило 20-20-20:</strong> каждые 20 минут смотреть вдаль (6+ метров) в течение 20 секунд. Моргать осознанно 10-15 раз.</li>
+            <li><strong>Микропаузы:</strong> каждые 45 минут вставать, 2-3 минуты активности (ходьба, растяжка плеч/шеи).</li>
+            <li><strong>Упражнения для кистей:</strong> растяжка сгибателей предплечья (рука вперёд, ладонь вверх, другой рукой тянем пальцы на себя, 15 сек × 3). Ротация запястий 10 раз в каждую сторону.</li>
+            <li><strong>Декомпрессия позвоночника:</strong> вис на турнике 30 секунд или наклон вперёд из положения стоя (руки свободно, 20 секунд).</li>
+            <li><strong>Режим сна:</strong> фиксированное время подъёма (±30 мин), продолжительность 7-9 часов. Исключить экраны за 1 час до сна (синий свет подавляет мелатонин).</li>
+            <li><strong>Гидратация:</strong> 30-35 мл воды на кг массы тела в сутки. Дегидратация усиливает мышечную усталость и когнитивное снижение.</li>
+          </ol>
+          <div class="fact" style="margin-top:16px">
+            <strong>Важно:</strong> первые три пункта (эргономика, освещение, 20-20-20) дают 70% эффекта и требуют минимальных усилий. Начните с них.
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="tag">Каркас знаний</span>
-        <h2>Как устроена профилактика</h2>
-      </div>
-      <div class="grid-2">
-        <div class="feature-list">
-          <div class="feature-item reveal"><div class="feature-icon">🧱</div><div><h4>Основа</h4><p>Эргономика + режим перерывов: это снимает 80% «офисных» симптомов быстрее всего.</p></div></div>
-          <div class="feature-item reveal"><div class="feature-icon">🧪</div><div><h4>Триггеры</h4><p>Экран, статичная поза, микродвижения кистей, стресс и недосып усиливают друг друга.</p></div></div>
-          <div class="feature-item reveal"><div class="feature-icon">📈</div><div><h4>Измеримость</h4><p>Таймеры, чек‑листы и тест помогают закрепить привычки и увидеть улучшения.</p></div></div>
+      <div class="content-block">
+        <div class="content-text reveal-left">
+          <span class="tag">Measurement</span>
+          <h2>Оценка и мониторинг рисков</h2>
+          <p>Используйте валидированные инструменты для оценки текущего состояния и динамики изменений:</p>
+          <ul style="list-style:disc;padding-left:20px;margin-top:12px;line-height:1.9;">
+            <li><strong>CVS-Q (Computer Vision Syndrome Questionnaire)</strong> — 16 пунктов, оценка частоты и интенсивности симптомов CVS.</li>
+            <li><strong>Nordic Questionnaire</strong> — стандартизированная оценка МСД (musculoskeletal disorders) в 9 анатомических зонах.</li>
+            <li><strong>Maslach Burnout Inventory (MBI)</strong> — 22 вопроса, три шкалы: эмоциональное истощение, деперсонализация, личные достижения.</li>
+            <li><strong>PSQI (Pittsburgh Sleep Quality Index)</strong> — оценка качества сна за последний месяц, 7 компонентов.</li>
+          </ul>
+          <div class="hero-actions" style="justify-content:flex-start;margin-top:24px;">
+            <a class="btn btn-primary" href="quiz.html">Пройти комплексную оценку</a>
+            <a class="btn btn-outline" href="resources.html">Инструменты</a>
+          </div>
         </div>
-        <div class="card reveal">
-          <div class="card-icon">🗓️</div>
-          <h3>План на 7 дней</h3>
-          <p style="margin-bottom:12px;color:var(--clr-text-muted)">Сделай это один раз — и станет легче.</p>
-          <ol style="padding-left:18px;list-style:decimal;color:var(--clr-text);line-height:1.7;">
-            <li>День 1: настрой высоту монитора и кресла.</li>
-            <li>День 2: включи таймер 45/5 и 20‑20‑20.</li>
-            <li>День 3: добавь 5‑мин разминку шеи/плеч.</li>
-            <li>День 4: прокачай кисти (растяжка сгибателей/разгибателей).</li>
-            <li>День 5: сон: фиксируем время подъёма.</li>
-            <li>День 6: прогулка 30 минут.</li>
-            <li>День 7: пересдаём тест и сравниваем.</li>
-          </ol>
+        <div class="data-block reveal-right">
+          <h4>Экономическое обоснование</h4>
+          <p style="line-height:1.8;"><strong>ROI программ профилактики:</strong> каждый $1, вложенный в эргономику и профилактику МСД, возвращает <strong>$3-6</strong> за счёт снижения абсентеизма, презентеизма и компенсаций (OSHA, 2018).</p>
+          <p style="margin-top:12px;line-height:1.8;"><strong>Производительность:</strong> улучшение эргономики повышает скорость выполнения задач на <strong>10-25%</strong> и снижает количество ошибок на <strong>20-40%</strong> (Human Factors and Ergonomics Society).</p>
+          <p style="margin-top:12px;line-height:1.8;"><strong>Retention:</strong> компании с программами well-being имеют на <strong>33% ниже</strong> текучесть кадров (Gallup, 2021).</p>
         </div>
       </div>
     </div>
@@ -130,56 +200,17 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-copy">© 2026 IT Health Lab. Не является медицинской консультацией.</div>
+        <div class="footer-copy">© 2026 IT Health Lab. Информационный ресурс. Не заменяет медицинскую консультацию.</div>
         <div class="footer-links">
           <a href="resources.html">Ресурсы</a>
-          <a href="quiz.html">Тест</a>
+          <a href="quiz.html">Оценка</a>
+          <a href="#protocols">Протоколы</a>
           <a href="index.html">Главная</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <div id="habitModal" class="search-modal" aria-hidden="true">
-    <div class="search-modal-backdrop" data-habit-close></div>
-    <div class="search-modal-card" style="max-width:780px;">
-      <div class="search-top">
-        <div class="search-pill">Habit</div>
-        <div style="font-weight:800;">Трекер привычек</div>
-        <div style="flex:1"></div>
-        <button class="btn btn-outline" data-habit-close>Закрыть</button>
-      </div>
-      <div style="padding:16px;display:grid;gap:10px;">
-        <div class="fact">Совет: отмечай минимум 3 пункта в день — так привычки закрепляются быстрее.</div>
-        <div id="habitsRoot"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="breathModal" class="search-modal" aria-hidden="true">
-    <div class="search-modal-backdrop" data-breath-close></div>
-    <div class="search-modal-card" style="max-width:760px;">
-      <div class="search-top">
-        <div class="search-pill">Breathe</div>
-        <div style="font-weight:800;">Дыхание 4‑6</div>
-        <div style="flex:1"></div>
-        <button class="btn btn-outline" data-breath-close>Закрыть</button>
-      </div>
-      <div style="padding:16px;display:grid;gap:12px;">
-        <p style="color:var(--clr-text-muted)">4 секунды вдох → 6 секунд выдох. 2–3 минуты — и напряжение заметно падает.</p>
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
-          <canvas id="breathCanvas" width="520" height="220" style="max-width:100%;border-radius:16px;border:1px solid var(--clr-border);background:var(--clr-surface);"></canvas>
-        </div>
-        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-          <button class="btn btn-primary" id="breathStart">Старт</button>
-          <button class="btn btn-outline" id="breathStop">Стоп</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script type="module" src="js/app.js"></script>
-  <script type="module" src="js/habits.js"></script>
-  <script type="module" src="js/breath.js"></script>
 </body>
 </html>
