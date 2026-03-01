@@ -11,7 +11,7 @@ import GlobalBackdrop from './components/GlobalBackdrop';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <GlobalBackdrop />
       <div className="min-h-screen flex flex-col relative">
