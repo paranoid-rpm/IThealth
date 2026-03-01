@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
+import { useReducedMotion } from '../lib/useReducedMotion';
 
 export type ParticleFlowCanvasProps = {
   className?: string;
@@ -27,6 +28,8 @@ function hash01(n: number) {
 export default function ParticleFlowCanvas({ className, intensity = 1 }: ParticleFlowCanvasProps) {
   const ref = useRef<HTMLCanvasElement | null>(null);
 
+  const reduced = useReducedMotion();
+
   const opts = useMemo(() => {
     const k = clamp01(intensity);
     return {
@@ -45,8 +48,6 @@ export default function ParticleFlowCanvas({ className, intensity = 1 }: Particl
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const mm = window.matchMedia?.('(prefers-reduced-motion: reduce)');
-    const reduced = mm?.matches ?? false;
     if (reduced) return;
 
     let raf = 0;
@@ -126,7 +127,6 @@ export default function ParticleFlowCanvas({ className, intensity = 1 }: Particl
         ctx.fill();
       }
 
-      ctx.strokeStyle = 'rgba(255,255,255,0.06)';
       ctx.lineWidth = 1;
       const d2 = opts.linkDist * opts.linkDist;
       for (let i = 0; i < particles.length; i++) {
@@ -182,7 +182,7 @@ export default function ParticleFlowCanvas({ className, intensity = 1 }: Particl
       ro.disconnect();
       cancelAnimationFrame(raf);
     };
-  }, [opts]);
+  }, [opts, reduced]);
 
   return <canvas ref={ref} className={className} aria-hidden="true" />;
 }
