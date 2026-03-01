@@ -26,7 +26,6 @@ export default function GlowCanvas(props: GlowCanvasProps) {
     };
 
     const draw = (now: number) => {
-      const dt = Math.min(64, now - t0);
       t0 = now;
 
       const w = canvas.getBoundingClientRect().width;
@@ -71,15 +70,9 @@ export default function GlowCanvas(props: GlowCanvasProps) {
     return () => {
       ro.disconnect();
       cancelAnimationFrame(raf);
-      void dt;
+      void t0;
     };
   }, []);
 
-  return (
-    <canvas
-      ref={ref}
-      className={props.className}
-      aria-hidden="true"
-    />
-  );
+  return <canvas ref={ref} className={props.className} aria-hidden="true" />;
 }
