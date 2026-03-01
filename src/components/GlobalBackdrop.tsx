@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import HudCanvas from './HudCanvas';
+import ParticleFlowCanvas from './ParticleFlowCanvas';
 
 export default function GlobalBackdrop() {
   const [enabled, setEnabled] = useState(true);
@@ -13,8 +13,8 @@ export default function GlobalBackdrop() {
 
   return (
     <div className="pointer-events-none fixed inset-0 -z-10">
-      <HudCanvas className="w-full h-full opacity-90" intensity={1} />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/40" />
+      <ParticleFlowCanvas className="w-full h-full" intensity={1} />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/45" />
     </div>
   );
 }
