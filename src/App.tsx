@@ -7,12 +7,14 @@ import Research from './pages/Research';
 import Tools from './pages/Tools';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import GlobalBackdrop from './components/GlobalBackdrop';
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
+      <GlobalBackdrop />
+      <div className="min-h-screen flex flex-col relative">
         <Navbar />
         <main className="flex-1 pt-[72px]">
           <Routes>
