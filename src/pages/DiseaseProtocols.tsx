@@ -84,7 +84,7 @@ function SymptomPicker({ onJump }: { onJump: (id: string) => void }) {
     <div className="rounded-3xl border border-white/10 bg-black/25 p-8">
       <div className="text-xs font-black tracking-wider uppercase text-primary">Быстрый выбор</div>
       <div className="mt-3 text-lg font-bold">Что беспокоит прямо сейчас?</div>
-      <p className="mt-2 text-sm text-muted">Выбери симптом — я перекину тебя в нужный протокол.</p>
+      <p className="mt-2 text-sm text-muted">Выбери симптом и я перекину тебя в нужную схему.</p>
 
       <div className="mt-5 flex flex-col md:flex-row gap-3">
         <select
@@ -118,7 +118,7 @@ export default function DiseaseProtocols() {
     { id: 'cvs', label: 'CVS (зрение)', hint: 'Сухость, жжение, головные боли от экрана' },
     { id: 'rsi', label: 'RSI (кисти)', hint: 'Туннельный синдром, тендиниты, перегруз' },
     { id: 'neck-back', label: 'Шея/спина', hint: 'Статическая нагрузка и “зажимы”' },
-    { id: 'burnout', label: 'Burnout', hint: 'Сон, стресс, истощение' },
+    { id: 'burnout', label: 'Выгорание', hint: 'Сон, стресс, истощение' },
   ];
 
   const [active, setActive] = useState<string>('cvs');
@@ -152,9 +152,9 @@ export default function DiseaseProtocols() {
     <div className="container mx-auto px-6 py-16 md:py-24 space-y-8">
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="max-w-5xl">
         <div className="text-primary font-bold text-xs tracking-wider uppercase mb-4 border-l-4 border-primary pl-4">Медицинский справочник</div>
-        <h1 className="text-4xl md:text-5xl font-black mb-6">Клинические протоколы профилактики</h1>
+        <h1 className="text-4xl md:text-5xl font-black mb-6">Клинические схемы профилактики</h1>
         <p className="text-lg md:text-xl text-muted leading-relaxed">
-          Здесь собраны практические протоколы для IT-специалистов: зрение (CVS), повторяющиеся нагрузки (RSI), шея/спина и профилактика
+          Здесь собраны практические схемы для IT-специалистов: зрение (CVS), повторяющиеся нагрузки (RSI), шея/спина и профилактика
           выгорания. Стиль подачи — “что делать завтра утром”, но с медицинской логикой: механизм → симптомы → интервенции → критерии эскалации.
         </p>
       </motion.div>
@@ -163,7 +163,7 @@ export default function DiseaseProtocols() {
         <div className="space-y-8">
           <SymptomPicker onJump={jump} />
 
-          <ContentBlock label="CVS" title="Computer Vision Syndrome: полный протокол">
+          <ContentBlock label="CVS" title="Компьютерный зрительный синдром: полная схема">
             <div id="cvs" className="scroll-mt-28" />
             <p>
               CVS — комплекс симптомов: астенопия, сухость, жжение, размытость, головные боли, замедление фокуса.
@@ -221,7 +221,7 @@ export default function DiseaseProtocols() {
             </div>
           </ContentBlock>
 
-          <ContentBlock label="RSI" title="Repetitive Strain Injury: кисти, предплечья, локоть">
+          <ContentBlock label="RSI" title="Повторяющаяся перегрузка: кисти, предплечья, локоть">
             <div id="rsi" className="scroll-mt-28" />
             <p>
               RSI — спектр перегрузочных состояний: тендиниты, эпикондилиты, компрессия нервов (карпальный туннель).
@@ -239,7 +239,7 @@ export default function DiseaseProtocols() {
                 ]}
               />
               <Checklist
-                title="Протокол профилактики"
+                title="Схема профилактики"
                 items={[
                   'Нейтральные запястья + опора под предплечья, локти около 90°',
                   'Каждые 45–60 минут: 2–3 минуты разгрузки (встать/походить)',
@@ -263,7 +263,7 @@ export default function DiseaseProtocols() {
             <div id="neck-back" className="scroll-mt-28" />
             <p>
               В сидячей работе ключевая проблема — длительная статическая нагрузка. Даже “идеальная” поза, удерживаемая часами,
-              становится плохой. Поэтому в протоколе главный драйвер — регулярная смена положения.
+              становится плохой. Поэтому в этой схеме главный драйвер — регулярная смена положения.
             </p>
 
             <div className="mt-6 grid md:grid-cols-2 gap-6">
@@ -296,7 +296,7 @@ export default function DiseaseProtocols() {
             />
           </ContentBlock>
 
-          <ContentBlock label="BURNOUT" title="Профессиональное выгорание: протокол стабилизации">
+          <ContentBlock label="ВЫГОРАНИЕ" title="Профессиональное выгорание: схема стабилизации">
             <div id="burnout" className="scroll-mt-28" />
             <p>
               Выгорание — феномен, связанный с хроническим стрессом на работе. В быту оно маскируется под “лень” или “я перегорел”.
@@ -305,7 +305,7 @@ export default function DiseaseProtocols() {
 
             <div className="mt-6 grid md:grid-cols-2 gap-6">
               <Checklist
-                title="Базовый протокол (2 недели)"
+                title="Базовый план на 2 недели"
                 items={[
                   'Сон: фиксированное время подъёма, 7–9 часов, минимум экранов за час до сна',
                   'Границы: выключать мессенджеры после рабочего окна',

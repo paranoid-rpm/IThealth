@@ -1,8 +1,8 @@
 import ContentBlock from '../components/ContentBlock';
 
-type Topic = 'CVS' | 'RSI' | 'Ergonomics' | 'Burnout' | 'General';
+type Topic = 'CVS' | 'RSI' | 'Эргономика' | 'Выгорание' | 'Общее';
 
-type Evidence = 'Guideline' | 'Systematic review' | 'Review' | 'Standard' | 'PDF/Handout';
+type Evidence = 'Рекомендации' | 'Систематический обзор' | 'Обзор' | 'Стандарт' | 'PDF/памятка';
 
 type Source = {
   id: string;
@@ -17,43 +17,43 @@ type Source = {
 const SOURCES: Source[] = [
   {
     id: 'who-burnout-faq',
-    topic: 'Burnout',
-    evidence: 'Standard',
-    title: 'WHO: Burn-out an occupational phenomenon (FAQ)',
+    topic: 'Выгорание',
+    evidence: 'Стандарт',
+    title: 'WHO: выгорание как профессиональный феномен (FAQ)',
     year: '2019',
     note: 'Коротко и официально: выгорание как феномен в рабочем контексте, три компонента (истощение, цинизм/дистанция, снижение эффективности).',
     url: 'https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon',
   },
   {
     id: 'who-icd11-burnout',
-    topic: 'Burnout',
-    evidence: 'Standard',
-    title: 'WHO ICD-11 MMS: Burn-out (QD85)',
+    topic: 'Выгорание',
+    evidence: 'Стандарт',
+    title: 'WHO ICD-11 MMS: выгорание (QD85)',
     year: '2024',
     note: 'Страница в ICD-11: определение, ограничения и “не применять” вне работы.',
     url: 'https://icd.who.int/browse/2024-01/mms/en#129180281',
   },
   {
     id: 'osha-workstations',
-    topic: 'Ergonomics',
-    evidence: 'Guideline',
-    title: 'OSHA: Computer Workstations eTool',
+    topic: 'Эргономика',
+    evidence: 'Рекомендации',
+    title: 'OSHA: руководство по компьютерным рабочим местам',
     note: 'Практическая эргономика (монитор, стул, клавиатура/мышь), схемы и чек-листы.',
     url: 'https://www.osha.gov/etools/computer-workstations',
   },
   {
     id: 'cal-osha-easy-ergo',
-    topic: 'Ergonomics',
-    evidence: 'PDF/Handout',
-    title: 'Cal/OSHA: Easy Ergonomics (Computer workstation)',
+    topic: 'Эргономика',
+    evidence: 'PDF/памятка',
+    title: 'Cal/OSHA: простая эргономика для компьютерного рабочего места',
     note: 'Короткая памятка по настройке рабочего места: высота монитора, клавиатура/мышь, поддержка ног и спины.',
     url: 'https://www.dir.ca.gov/dosh/dosh_publications/computerergo.pdf',
   },
   {
     id: 'cvs-sr-ophthalmology-2022',
     topic: 'CVS',
-    evidence: 'Systematic review',
-    title: 'Interventions for the Management of Computer Vision Syndrome: systematic review & meta-analysis (abstract)',
+    evidence: 'Систематический обзор',
+    title: 'Управление компьютерным зрительным синдромом: систематический обзор и мета-анализ',
     year: '2022',
     note: 'Оценка интервенций при “eye strain” от компьютера; часто подчёркивают низкую определённость доказательств для многих “популярных” решений.',
     url: 'https://pubmed.ncbi.nlm.nih.gov/35597519/',
@@ -61,8 +61,8 @@ const SOURCES: Source[] = [
   {
     id: 'cvs-review-2025-pmc',
     topic: 'CVS',
-    evidence: 'Review',
-    title: 'Computer vision syndrome: a comprehensive literature review (PMC)',
+    evidence: 'Обзор',
+    title: 'Компьютерный зрительный синдром: большой обзор литературы',
     year: '2025',
     note: 'Большой обзор: механизмы, факторы риска, профилактика и реальность доказательной базы (много выводов “доказательства ограничены”).',
     url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11901492/',
@@ -70,8 +70,8 @@ const SOURCES: Source[] = [
   {
     id: 'aoa-cvs',
     topic: 'CVS',
-    evidence: 'Guideline',
-    title: 'American Optometric Association: Computer vision syndrome',
+    evidence: 'Рекомендации',
+    title: 'American Optometric Association: компьютерный зрительный синдром',
     note: 'Практические рекомендации по зрительной нагрузке, перерывам и настройке рабочего места.',
     url: 'https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/computer-vision-syndrome',
   },
@@ -126,8 +126,8 @@ export default function Research() {
     total: SOURCES.length,
     cvs: SOURCES.filter(s => s.topic === 'CVS').length,
     rsi: SOURCES.filter(s => s.topic === 'RSI').length,
-    ergo: SOURCES.filter(s => s.topic === 'Ergonomics').length,
-    burnout: SOURCES.filter(s => s.topic === 'Burnout').length,
+    ergo: SOURCES.filter(s => s.topic === 'Эргономика').length,
+    burnout: SOURCES.filter(s => s.topic === 'Выгорание').length,
   };
 
   return (
@@ -156,25 +156,25 @@ export default function Research() {
           </div>
           <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
             <div className="font-black text-white">{counts.burnout}</div>
-            <div className="text-white/60 mt-1">Burnout</div>
+            <div className="text-white/60 mt-1">Выгорание</div>
           </div>
         </div>
       </ContentBlock>
 
       <ContentBlock label="Уровни" title="Какие источники считать “сильнее”">
         <p className="text-sm text-muted">
-          Упрощённая шкала: guideline/standard → systematic review → review → отдельные исследования/мнения.
+          Упрощённая шкала: рекомендации/стандарт → систематический обзор → обзор → отдельные исследования и мнения.
           Мы используем это как навигацию по надёжности, а не как “истину в последней инстанции”.
         </p>
         <div className="mt-5 grid md:grid-cols-2 gap-6">
           <div className="rounded-3xl border border-white/10 bg-black/20 p-7">
-            <div className="text-xs font-black tracking-wider uppercase text-primary">Guideline / Standard</div>
+            <div className="text-xs font-black tracking-wider uppercase text-primary">Рекомендации / стандарт</div>
             <div className="mt-2 text-sm text-muted leading-relaxed">
               Хорошо для практических рекомендаций и терминов. Обычно аккуратно формулируют ограничения.
             </div>
           </div>
           <div className="rounded-3xl border border-white/10 bg-black/20 p-7">
-            <div className="text-xs font-black tracking-wider uppercase text-primary">Systematic review / Meta-analysis</div>
+            <div className="text-xs font-black tracking-wider uppercase text-primary">Систематический обзор / мета-анализ</div>
             <div className="mt-2 text-sm text-muted leading-relaxed">
               Сводят несколько работ; полезны, чтобы понять, где эффект устойчивый, а где “маркетинг”.
             </div>
@@ -186,14 +186,14 @@ export default function Research() {
         <p className="text-sm text-muted">Карточки ниже сгруппированы по темам. Ссылки открываются в новой вкладке.</p>
 
         <TopicGroup topic="CVS" subtitle="Экранная нагрузка, сухость, астенопия, перерывы и доказательная база" />
-        <TopicGroup topic="Ergonomics" subtitle="Workstation, поза, ввод, микропауы и практические чек-листы" />
-        <TopicGroup topic="Burnout" subtitle="Определение (ICD-11), границы термина и чем он не является" />
+        <TopicGroup topic="Эргономика" subtitle="Рабочее место, поза, ввод, микропаузы и практические чек-листы" />
+        <TopicGroup topic="Выгорание" subtitle="Определение (ICD-11), границы термина и чем оно не является" />
       </ContentBlock>
 
       <ContentBlock label="Дальше" title="Что добавим следующим">
         <ul className="list-disc list-inside space-y-2 text-sm text-muted leading-relaxed">
           <li>RSI: систематические обзоры по эргономике ввода и микропаузам.</li>
-          <li>Burnout: обзоры по интервенциям на уровне организации (нагрузка, WIP, рабочие границы).</li>
+          <li>Выгорание: обзоры по интервенциям на уровне организации (нагрузка, WIP, рабочие границы).</li>
           <li>“Резюме по каждому источнику”: что утверждает, и где границы уверенности.</li>
         </ul>
       </ContentBlock>

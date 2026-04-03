@@ -99,7 +99,7 @@ export default function Ergonomics() {
   const toc: TocItem[] = [
     { id: 'quick', label: '10 минут', hint: 'Минимальная настройка, чтобы стало легче' },
     { id: 'angles', label: 'Углы и паттерны', hint: 'Что обычно даёт боль и как исправить' },
-    { id: 'setup', label: 'Сетапы', hint: 'Ноутбук, два монитора, standing' },
+    { id: 'setup', label: 'Сценарии', hint: 'Ноутбук, два монитора, работа стоя' },
     { id: 'microbreaks', label: 'Микропауы', hint: 'Короткие разгрузки в течение дня' },
   ];
 
@@ -206,7 +206,7 @@ export default function Ergonomics() {
             />
           </ContentBlock>
 
-          <ContentBlock label="Сетапы" title="Ноутбук, два монитора, стоячая работа">
+          <ContentBlock label="Сценарии" title="Ноутбук, два монитора, работа стоя">
             <div id="setup" className="scroll-mt-28" />
             <div className="grid md:grid-cols-2 gap-6">
               <Card
@@ -226,7 +226,7 @@ export default function Ergonomics() {
                 ]}
               />
               <Card
-                title="Standing"
+                title="Работа стоя"
                 items={[
                   'Стоять весь день — не цель: чередование сидя/стоя.',
                   'Экран на уровне глаз, локти ~90°, не “висеть” на плечах.',

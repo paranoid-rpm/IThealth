@@ -51,7 +51,7 @@ export default function Home() {
           className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-wider uppercase mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          Evidence-Based Occupational Health
+          Доказательный подход к здоровью в IT
         </motion.div>
 
         <motion.h1
@@ -60,7 +60,7 @@ export default function Home() {
           transition={{ delay: 0.1 }}
           className="text-5xl md:text-7xl font-black tracking-tight mb-6 max-w-4xl"
         >
-          Медицинские протоколы для <span className="gradient-text">IT-специалистов</span>
+          Медицинские схемы для <span className="gradient-text whitespace-nowrap inline-block">IT-специалистов</span>
         </motion.h1>
 
         <motion.p
@@ -69,7 +69,7 @@ export default function Home() {
           transition={{ delay: 0.2 }}
           className="text-lg md:text-xl text-muted max-w-3xl mb-10 leading-relaxed"
         >
-          Системный подход к снижению рисков CVS, RSI, дорсопатии и выгорания. Чек-листы, протоколы и инструменты мониторинга
+          Системный подход к снижению рисков CVS, RSI, дорсопатии и выгорания. Чек-листы, схемы и инструменты мониторинга
           для разработчиков и всех, кто работает за экраном.
         </motion.p>
 
@@ -83,7 +83,7 @@ export default function Home() {
             to="/protocols"
             className="flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-br from-primary to-accent text-white font-bold text-sm shadow-[0_0_30px_rgba(167,139,250,0.3)] hover:shadow-[0_0_40px_rgba(167,139,250,0.5)] transition-all hover:-translate-y-1"
           >
-            Открыть протоколы <ArrowRight size={16} />
+            Открыть схемы <ArrowRight size={16} />
           </Link>
           <Link
             to="/tools"
@@ -117,7 +117,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <StepCard n="1" title="Начни с протокола" text="Открой раздел “Протоколы” и выбери то, что ближе к твоим симптомам." />
+            <StepCard n="1" title="Начни со схемы" text="Открой раздел “Клинические схемы” и выбери то, что ближе к твоим симптомам." />
             <StepCard n="2" title="Включи микро‑паузы" text="Добавь 2–5 минутные разгрузки каждый час: они дают максимальный эффект на дистанции." />
             <StepCard n="3" title="Отслеживай динамику" text="В “Инструментах” быстро находи чек-листы и закрепляй привычки без перегруза." />
           </div>
@@ -127,7 +127,7 @@ export default function Home() {
               to="/protocols"
               className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition text-sm font-semibold"
             >
-              Перейти в протоколы
+              Перейти к схемам
             </Link>
             <Link
               to="/research"
@@ -143,8 +143,8 @@ export default function Home() {
         <div className="container mx-auto px-6 grid md:grid-cols-3 gap-6">
           <Link to="/protocols" className="glass-card p-7 rounded-2xl block">
             <BookOpen className="w-9 h-9 text-primary mb-4" />
-            <div className="text-lg font-bold">Протоколы</div>
-            <div className="text-sm text-muted mt-1">Структура “механизм → симптомы → действия → red flags”.</div>
+            <div className="text-lg font-bold">Клинические схемы</div>
+            <div className="text-sm text-muted mt-1">Структура “механизм → симптомы → действия → тревожные сигналы”.</div>
           </Link>
           <Link to="/ergonomics" className="glass-card p-7 rounded-2xl block">
             <Shield className="w-9 h-9 text-primary mb-4" />
@@ -154,7 +154,7 @@ export default function Home() {
           <Link to="/tools" className="glass-card p-7 rounded-2xl block">
             <ClipboardCheck className="w-9 h-9 text-primary mb-4" />
             <div className="text-lg font-bold">Инструменты</div>
-            <div className="text-sm text-muted mt-1">Поиск по протоколам, фильтры и быстрые чек-листы.</div>
+            <div className="text-sm text-muted mt-1">Поиск по схемам, фильтры и быстрые чек-листы.</div>
           </Link>
         </div>
       </section>
@@ -211,14 +211,14 @@ export default function Home() {
                 to="/protocols"
                 className="px-6 py-3 rounded-xl bg-gradient-to-br from-primary to-accent text-white text-sm font-bold"
               >
-                Открыть протоколы
+                Открыть схемы
               </Link>
             </div>
 
             <div className="mt-6 grid md:grid-cols-3 gap-4">
-              <UpdateItem title="Tools: фильтры и red flags" text="Протоколы стали искать легче: теги, длительность, “почему” и красные флаги." />
-              <UpdateItem title="Protocols: быстрый выбор симптома" text="Выбираешь симптом — прыгаешь в нужный раздел, плюс оглавление с подсветкой." />
-              <UpdateItem title="Research: библиография" text="Добавлены карточки источников и внешние гайды для доказательной опоры." />
+              <UpdateItem title="Инструменты: фильтры и тревожные сигналы" text="Схемы стало искать легче: теги, длительность, “почему” и красные флаги." />
+              <UpdateItem title="Схемы: быстрый выбор симптома" text="Выбираешь симптом и сразу переходишь в нужный раздел, плюс есть оглавление с подсветкой." />
+              <UpdateItem title="Исследования: библиография" text="Добавлены карточки источников и внешние рекомендации для доказательной опоры." />
             </div>
           </div>
         </div>

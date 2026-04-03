@@ -5,7 +5,7 @@ import { useMemo, useState } from 'react';
 
 const navItems = [
   { path: '/', label: 'Главная' },
-  { path: '/protocols', label: 'Клинические протоколы' },
+  { path: '/protocols', label: 'Клинические схемы' },
   { path: '/ergonomics', label: 'Эргономика' },
   { path: '/research', label: 'Исследования' },
   { path: '/tools', label: 'Инструменты' },
@@ -52,7 +52,7 @@ export default function Navbar() {
         <button
           className="ml-auto md:hidden w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center hover:bg-white/10 transition"
           onClick={() => setOpen(v => !v)}
-          aria-label="Menu"
+          aria-label="Меню"
         >
           {open ? <X size={18} /> : <Menu size={18} />}
         </button>

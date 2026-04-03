@@ -10,7 +10,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-xs text-muted">
-          © {new Date().getFullYear()} IT Health Lab
+          © {new Date().getFullYear()} IT Health Lab. Все права защищены.
         </div>
       </div>
     </footer>
