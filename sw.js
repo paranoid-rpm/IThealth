@@ -1,25 +1,18 @@
 /* ========== PWA Service Worker ========== */
 
-const CACHE_NAME = 'ith-cache-v1';
+const CACHE_NAME = 'ith-cache-v2';
 
 const ASSETS = [
   './',
   './index.html',
-  './diseases.html',
-  './risks.html',
   './prevention.html',
-  './ergonomics.html',
+  './risks.html',
   './eyes.html',
   './mental.html',
   './exercises.html',
   './quiz.html',
   './resources.html',
-
-  './css/variables.css',
-  './css/base.css',
-  './css/layout.css',
-  './css/components.css',
-  './css/pages.css',
+  './manifest.webmanifest',
 
   './js/app.js',
   './js/i18n.js',
@@ -35,7 +28,11 @@ const ASSETS = [
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then(async (cache) => {
+      // Cache resiliently: one missing file should not break SW install.
+      const requests = ASSETS.map((url) => new Request(url, { cache: 'reload' }));
+      await Promise.allSettled(requests.map((req) => cache.add(req)));
+    })
   );
   self.skipWaiting();
 });

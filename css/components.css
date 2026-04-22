@@ -1,0 +1,75 @@
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--clr-primary);
+  border-left: 3px solid var(--clr-primary);
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.card,
+.quiz-container,
+.feature-item {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+}
+
+.card,
+.feature-item {
+  padding: 16px;
+}
+
+.card h3,
+.feature-item h4 {
+  margin-top: 8px;
+}
+
+.card-icon,
+.feature-icon {
+  font-size: 22px;
+}
+
+.feature-list {
+  display: grid;
+  gap: 12px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 12px;
+}
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  z-index: 60;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent));
+}
+
+.btn {
+  border: 1px solid var(--clr-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--clr-text);
+  padding: 8px 12px;
+}
+
+.quiz-progress {
+  margin-top: 16px;
+  border-radius: 999px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.quiz-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent));
+}

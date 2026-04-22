@@ -91,6 +91,12 @@ export default function Home() {
           >
             Инструменты
           </Link>
+          <Link
+            to="/athletics"
+            className="flex items-center gap-2 px-8 py-4 rounded-full border border-primary/30 text-primary font-bold text-sm hover:bg-primary/10 transition-all"
+          >
+            Мини‑справочник по атлетике
+          </Link>
         </motion.div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3 text-xs text-muted">

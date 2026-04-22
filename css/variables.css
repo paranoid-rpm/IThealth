@@ -1,0 +1,10 @@
+:root {
+  --clr-bg: #09090b;
+  --clr-surface: #121216;
+  --clr-border: rgba(255, 255, 255, 0.12);
+  --clr-text: #e4e4e7;
+  --clr-muted: #a1a1aa;
+  --clr-primary: #a78bfa;
+  --clr-accent: #ec4899;
+  --radius: 18px;
+}

@@ -8,6 +8,13 @@ type TocItem = {
   hint: string;
 };
 
+const TOC: TocItem[] = [
+  { id: 'quick', label: '10 минут', hint: 'Минимальная настройка, чтобы стало легче' },
+  { id: 'angles', label: 'Углы и паттерны', hint: 'Что обычно даёт боль и как исправить' },
+  { id: 'setup', label: 'Сценарии', hint: 'Ноутбук, два монитора, работа стоя' },
+  { id: 'microbreaks', label: 'Микропауы', hint: 'Короткие разгрузки в течение дня' },
+];
+
 function Card({ title, items }: { title: string; items: string[] }) {
   return (
     <div className="glass-card rounded-3xl p-8">
@@ -96,24 +103,17 @@ function SetupPicker({ onJump }: { onJump: (id: string) => void }) {
 }
 
 export default function Ergonomics() {
-  const toc: TocItem[] = [
-    { id: 'quick', label: '10 минут', hint: 'Минимальная настройка, чтобы стало легче' },
-    { id: 'angles', label: 'Углы и паттерны', hint: 'Что обычно даёт боль и как исправить' },
-    { id: 'setup', label: 'Сценарии', hint: 'Ноутбук, два монитора, работа стоя' },
-    { id: 'microbreaks', label: 'Микропауы', hint: 'Короткие разгрузки в течение дня' },
-  ];
-
   const [active, setActive] = useState<string>('quick');
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY + 140;
-      for (let i = toc.length - 1; i >= 0; i--) {
-        const el = document.getElementById(toc[i].id);
+      for (let i = TOC.length - 1; i >= 0; i--) {
+        const el = document.getElementById(TOC[i].id);
         if (!el) continue;
         const top = el.getBoundingClientRect().top + window.scrollY;
         if (y >= top) {
-          setActive(toc[i].id);
+          setActive(TOC[i].id);
           return;
         }
       }
@@ -278,7 +278,7 @@ export default function Ergonomics() {
           <div className="glass-card rounded-3xl p-6">
             <div className="text-xs font-black tracking-wider uppercase text-white/80">Навигация</div>
             <div className="mt-4 space-y-2">
-              {toc.map(i => (
+              {TOC.map(i => (
                 <div key={i.id} className="rounded-2xl border border-white/10 bg-black/20 p-3">
                   <div className="flex items-center justify-between gap-3">
                     <div className="text-sm font-bold">{i.label}</div>

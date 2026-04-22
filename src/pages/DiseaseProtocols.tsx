@@ -8,6 +8,13 @@ type TocItem = {
   hint: string;
 };
 
+const TOC: TocItem[] = [
+  { id: 'cvs', label: 'CVS (зрение)', hint: 'Сухость, жжение, головные боли от экрана' },
+  { id: 'rsi', label: 'RSI (кисти)', hint: 'Туннельный синдром, тендиниты, перегруз' },
+  { id: 'neck-back', label: 'Шея/спина', hint: 'Статическая нагрузка и “зажимы”' },
+  { id: 'burnout', label: 'Выгорание', hint: 'Сон, стресс, истощение' },
+];
+
 function RedFlags({ items }: { items: string[] }) {
   return (
     <div className="mt-6 rounded-2xl border border-red-500/20 bg-red-500/5 p-5">
@@ -114,24 +121,17 @@ function SymptomPicker({ onJump }: { onJump: (id: string) => void }) {
 }
 
 export default function DiseaseProtocols() {
-  const toc: TocItem[] = [
-    { id: 'cvs', label: 'CVS (зрение)', hint: 'Сухость, жжение, головные боли от экрана' },
-    { id: 'rsi', label: 'RSI (кисти)', hint: 'Туннельный синдром, тендиниты, перегруз' },
-    { id: 'neck-back', label: 'Шея/спина', hint: 'Статическая нагрузка и “зажимы”' },
-    { id: 'burnout', label: 'Выгорание', hint: 'Сон, стресс, истощение' },
-  ];
-
   const [active, setActive] = useState<string>('cvs');
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY + 140;
-      for (let i = toc.length - 1; i >= 0; i--) {
-        const el = document.getElementById(toc[i].id);
+      for (let i = TOC.length - 1; i >= 0; i--) {
+        const el = document.getElementById(TOC[i].id);
         if (!el) continue;
         const top = el.getBoundingClientRect().top + window.scrollY;
         if (y >= top) {
-          setActive(toc[i].id);
+          setActive(TOC[i].id);
           return;
         }
       }
@@ -343,7 +343,7 @@ export default function DiseaseProtocols() {
           <div className="glass-card rounded-3xl p-6">
             <div className="text-xs font-black tracking-wider uppercase text-white/80">Навигация</div>
             <div className="mt-4 space-y-2">
-              {toc.map(i => (
+              {TOC.map(i => (
                 <div key={i.id} className="rounded-2xl border border-white/10 bg-black/20 p-3">
                   <div className="flex items-center justify-between gap-3">
                     <div className="text-sm font-bold">{i.label}</div>

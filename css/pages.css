@@ -1,0 +1,13 @@
+.quiz-container {
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.article h2 {
+  margin: 24px 0 12px;
+}
+
+.article ol,
+.article ul {
+  color: var(--clr-muted);
+}

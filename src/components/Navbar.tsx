@@ -7,6 +7,7 @@ const navItems = [
   { path: '/', label: 'Главная' },
   { path: '/protocols', label: 'Клинические схемы' },
   { path: '/ergonomics', label: 'Эргономика' },
+  { path: '/athletics', label: 'Атлетика' },
   { path: '/research', label: 'Исследования' },
   { path: '/tools', label: 'Инструменты' },
 ] as const;
@@ -53,6 +54,8 @@ export default function Navbar() {
           className="ml-auto md:hidden w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center hover:bg-white/10 transition"
           onClick={() => setOpen(v => !v)}
           aria-label="Меню"
+          aria-expanded={open}
+          aria-controls="mobile-nav-menu"
         >
           {open ? <X size={18} /> : <Menu size={18} />}
         </button>
@@ -66,6 +69,7 @@ export default function Navbar() {
           open: { opacity: 1, y: 0, pointerEvents: 'auto' },
           closed: { opacity: 0, y: -8, pointerEvents: 'none' },
         }}
+        id="mobile-nav-menu"
         className="md:hidden absolute top-[72px] left-0 right-0 glass-nav border-b border-white/10"
       >
         <div className="container mx-auto px-6 py-4 flex flex-col gap-2">
